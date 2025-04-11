@@ -1,0 +1,107 @@
+must use debian/linux 32bit, (64 bit failed) , use rpd 2017 run success
+
+(0) see Makefile, sudo apt install
+#sudo apt install libffi-dev
+#sudo apt install libicu-dev
+#sudo apt install libsqlite3-dev
+#sudo apt install libssl-dev
+#sudo apt install libexpat-dev
+(1) make clean all
+(2) run testvm/prepare_jar.txt
+$ make clean all
+$ sudo mkdir -p /data/dalvik-cache
+$ sudo chown -R pi:pi /data
+$ sudo mkdir -p /system/bin
+$ sudo chown -R pi:pi /system
+$ cp dalvik/dexopt/dexopt /system/bin/.
+$ cp testvm/foo.jar /data/.
+$ cp testvm/framework2/*.jar /data/.
+$ cd dalvik/dalvikvm
+$ make test
+
+only foo.jar and core.jar need
+
+(3) if gdb, see 
+make debug
+
+if debug multi processes(dexopt and dalvikvm)
+(gdb) set follow-fork-mode child
+(gdb) set detach-on-fork on
+(gdb) b dvmAbort
+(gdb) r
+
+(4) be care here 
+# for libfdlibm
+CFLAGS += -D_IEEE_LIBM
+#-D__LITTLE_ENDIAN"
+
+some cpu need __LITTLE_ENDIAN (here not)
+
+
+
+
+
+---------------
+be care android_atomic_cmpxchg=ATOMIC_CMP_SWAP
+
+
+int android_atomic_cmpxchg(int32_t oldvalue, int32_t newvalue, volatile int32_t* addr) {
+!!!use this-->#if 0
+    int xchg;
+    asm volatile
+    (
+    "   lock; cmpxchg %%ecx, (%%edx);"
+    "   setne %%al;"
+    "   andl $1, %%eax"
+    : "=a" (xchg)
+    : "a" (oldvalue), "c" (newvalue), "d" (addr)
+    );
+    return xchg;
+#else
+This is slow and wrong !!---->	return __sync_val_compare_and_swap(addr, oldvalue, newvalue);
+#endif
+}
+
+
+__sync_val_compare_and_swap
+https://www.ibm.com/docs/en/xl-c-and-cpp-aix/12.1.0?topic=functions-sync-val-compare-swap
+
+
+---------------------
+AtomicCache.c
+
+    firstVersion += 2;
+    if (!ATOMIC_CMP_SWAP((volatile s4*) &pEntry->version,
+            firstVersion | ATOMIC_LOCK_FLAG, firstVersion))
+    {
+        //LOGE("unable to reset the instanceof cache ownership\n");
+!!!!if use __sync_val_compare_and_swap, dexopt will crash here---->        dvmAbort();
+    }
+
+https://copyfuture.com/blogs-details/20201213011122312pc1jyov85tcj1hh
+
+
+--------------
+Init.c: use gdb to break here: b dvmAbort
+
+void dvmAbort(void)
+{
+    LOGE("VM aborting\n");
+
+https://blog.csdn.net/snow_5288/article/details/72982594
+(gdb) set follow-fork-mode child
+(gdb) set detach-on-fork on
+(gdb) b dvmAbort
+(gdb) r
+
+
+
+----------------------
+gDvmNativeMethodSet
+dvm_java_lang_Object
+(not useful)
+-------------------
+
+
+
+

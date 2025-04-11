@@ -1,0 +1,12 @@
+$ make clean all
+$ sudo mkdir -p /data/dalvik-cache
+$ sudo chown -R pi:pi /data
+$ sudo mkdir -p /system/bin
+$ sudo chown -R pi:pi /system
+$ cp dalvik/dexopt/dexopt /system/bin/.
+$ cp testvm/foo.jar /data/.
+$ cp testvm/framework2/*.jar /data/.
+$ cd dalvik/dalvikvm
+$ make test
+
+

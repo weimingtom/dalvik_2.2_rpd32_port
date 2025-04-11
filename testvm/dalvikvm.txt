@@ -1,0 +1,31 @@
+dalvikvm -Xbootclasspath:/data/core.jar:/data/ext.jar:/data/framework.jar -classpath foo.jar Foo
+
+I/dalvikvm(  283): DexOpt: source file mod time mismatch (3e437663 vs 3cde708c)
+D/dalvikvm(  283): Stale deps in cache file; removing and retrying
+D/dalvikvm(  283): DexOpt: --- BEGIN 'core.jar' (bootstrap=1) ---
+D/dalvikvm(  284): Ignoring duplicate verify attempt on Ljava/lang/Object;
+D/dalvikvm(  284): Ignoring duplicate verify attempt on Ljava/lang/Class;
+D/dalvikvm(  284): DexOpt: load 194ms, verify 2187ms, opt 119ms
+D/dalvikvm(  283): DexOpt: --- END 'core.jar' (success) ---
+D/dalvikvm(  283): DEX prep '/data/core.jar': unzip in 222ms, rewrite 3567ms
+I/dalvikvm(  283): DexOpt: source file mod time mismatch (3e437670 vs 3cde709b)
+D/dalvikvm(  283): Stale deps in cache file; removing and retrying
+D/dalvikvm(  283): DexOpt: --- BEGIN 'ext.jar' (bootstrap=1) ---
+D/dalvikvm(  285): DexOpt: load 23ms, verify 285ms, opt 12ms
+D/dalvikvm(  283): DexOpt: --- END 'ext.jar' (success) ---
+D/dalvikvm(  283): DEX prep '/data/ext.jar': unzip in 26ms, rewrite 405ms
+I/dalvikvm(  283): DexOpt: source file mod time mismatch (3e43768c vs 3cde70b8)
+D/dalvikvm(  283): Stale deps in cache file; removing and retrying
+D/dalvikvm(  283): DexOpt: --- BEGIN 'framework.jar' (bootstrap=1) ---
+D/dalvikvm(  286): Note: class Landroid/opengl/GLWrapperBase; has 211 unimplemented (abstract) methods
+D/dalvikvm(  286): DexOpt: load 304ms, verify 2881ms, opt 153ms
+D/dalvikvm(  283): DexOpt: --- END 'framework.jar' (success) ---
+D/dalvikvm(  283): DEX prep '/data/framework.jar': unzip in 280ms, rewrite 3965ms
+W/dalvikvm(  283): threadid=1: thread exiting with uncaught exception (group=0x4001d598)
+
+
+D/dalvikvm(  297): DexOpt: --- BEGIN 'foo.jar' (bootstrap=0) ---
+D/dalvikvm(  300): DexOpt: load 2ms, verify 2ms, opt 0ms
+D/dalvikvm(  297): DexOpt: --- END 'foo.jar' (success) ---
+D/dalvikvm(  297): DEX prep 'foo.jar': unzip in 0ms, rewrite 35ms
+

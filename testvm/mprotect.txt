@@ -1,0 +1,14 @@
+https://www.embeddedrelated.com/showthread/comp.arch.embedded/100532-1.php
+
+https://blog.csdn.net/weixin_30273763/article/details/99827772
+https://blog.csdn.net/weixin_30273763/article/details/99827772
+
+http://lkml.iu.edu/hypermail/linux/kernel/1004.2/01459.html
+
+__sync_bool_compare_and_swap
+https://blog.csdn.net/ygm_linux/article/details/25823927
+https://stackoverflow.com/questions/2125937/equivalent-of-interlockedincrement-in-linux-gcc
+
+https://www.codeleading.com/article/67661964040/
+
+https://blog.csdn.net/qq_15762939/article/details/104062307

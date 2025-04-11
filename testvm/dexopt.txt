@@ -1,0 +1,5 @@
+    if (!dvmClassStartup())
+        goto fail;
+
+ DexOpt: --- BEGIN 'framework.jar' (bootstrap=1) ---
+

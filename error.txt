@@ -1,0 +1,605 @@
+    \
+      |                                       ^~~~~~~~~~~~
+mterp/out/InterpC-allstubs.c:2981:1: note: in expansion of macro ‘HANDLE_IPUT_X_QUICK’
+ 2981 | HANDLE_IPUT_X_QUICK(OP_IPUT_OBJECT_QUICK,   "-object", Object, _AS_OBJECT)
+      | ^~~~~~~~~~~~~~~~~~~
+mterp/out/InterpC-allstubs.c: In function ‘dvmMterp_filledNewArray’:
+mterp/out/InterpC-allstubs.c:3191:26: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+ 3191 |         contents = (u4*) newArray->contents;
+      |                          ^~~~~~~~
+mterp/out/InterpC-allstubs.c: In function ‘dvmMterp_invokeVirtual’:
+mterp/out/InterpC-allstubs.c:3232:23: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ 3232 |             thisPtr = (Object*) GET_REGISTER(vdst);
+      |                       ^
+mterp/out/InterpC-allstubs.c:3237:23: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ 3237 |             thisPtr = (Object*) GET_REGISTER(vdst & 0x0f);
+      |                       ^
+mterp/out/InterpC-allstubs.c: In function ‘dvmMterp_invokeSuper’:
+mterp/out/InterpC-allstubs.c:3326:27: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ 3326 |         if (!checkForNull((Object*) GET_REGISTER(thisReg)))
+      |                           ^
+mterp/out/InterpC-allstubs.c: In function ‘dvmMterp_invokeInterface’:
+mterp/out/InterpC-allstubs.c:3402:23: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ 3402 |             thisPtr = (Object*) GET_REGISTER(vdst);
+      |                       ^
+mterp/out/InterpC-allstubs.c:3407:23: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ 3407 |             thisPtr = (Object*) GET_REGISTER(vdst & 0x0f);
+      |                       ^
+mterp/out/InterpC-allstubs.c: In function ‘dvmMterp_invokeDirect’:
+mterp/out/InterpC-allstubs.c:3448:27: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ 3448 |         if (!checkForNull((Object*) GET_REGISTER(thisReg)))
+      |                           ^
+mterp/out/InterpC-allstubs.c: In function ‘dvmMterp_invokeVirtualQuick’:
+mterp/out/InterpC-allstubs.c:3507:23: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ 3507 |             thisPtr = (Object*) GET_REGISTER(vdst);
+      |                       ^
+mterp/out/InterpC-allstubs.c:3512:23: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ 3512 |             thisPtr = (Object*) GET_REGISTER(vdst & 0x0f);
+      |                       ^
+mterp/out/InterpC-allstubs.c: In function ‘dvmMterp_invokeSuperQuick’:
+mterp/out/InterpC-allstubs.c:3564:27: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ 3564 |         if (!checkForNull((Object*) GET_REGISTER(thisReg)))
+      |                           ^
+In file included from ../../frameworks/base/include/utils/Log.h:31,
+                 from ./Common.h:147,
+                 from ./Dalvik.h:25,
+                 from mterp/out/InterpC-allstubs.c:25:
+mterp/out/InterpC-allstubs.c: In function ‘dvmMterp_invokeMethod’:
+mterp/out/InterpC-allstubs.c:3940:22: warning: format ‘%d’ expects argument of type ‘int’, but argument 7 has type ‘long int’ [-Wformat=]
+ 3940 |                 LOGV("Stack overflow on method call (start=%p end=%p newBot=%p(%d) size=%d '%s')\n",
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 3941 |                     self->interpStackStart, self->interpStackEnd, bottom,
+ 3942 |                     (u1*) fp - bottom, self->interpStackSize,
+      |                     ~~~~~~~~~~~~~~~~~
+      |                              |
+      |                              long int
+../../system/core/include/cutils/log.h:401:36: note: in definition of macro ‘android_printLog’
+  401 |     __android_log_print(prio, tag, fmt)
+      |                                    ^~~
+../../system/core/include/cutils/log.h:335:5: note: in expansion of macro ‘LOG_PRI’
+  335 |     LOG_PRI(ANDROID_##priority, tag, __VA_ARGS__)
+      |     ^~~~~~~
+../../system/core/include/cutils/log.h:80:26: note: in expansion of macro ‘LOG’
+   80 | #define LOGV(...) ((void)LOG(LOG_VERBOSE, LOG_TAG, __VA_ARGS__))
+      |                          ^~~
+mterp/out/InterpC-allstubs.c:3940:17: note: in expansion of macro ‘LOGV’
+ 3940 |                 LOGV("Stack overflow on method call (start=%p end=%p newBot=%p(%d) size=%d '%s')\n",
+      |                 ^~~~
+mterp/out/InterpC-allstubs.c:3940:81: note: format string is defined here
+ 3940 | V("Stack overflow on method call (start=%p end=%p newBot=%p(%d) size=%d '%s')\n",
+      |                                                             ~^
+      |                                                              |
+      |                                                              int
+      |                                                             %ld
+ar rcs libdvm.a AllocTracker.o AtomicCache.o CheckJni.o Ddm.o Debugger.o DvmDex.o  Exception.o Hash.o IndirectRefTable.o Init.o InlineNative.o Inlines.o  Intern.o Jni.o JarFile.o LinearAlloc.o Misc.o Native.o PointerSet.o  Profile.o Properties.o RawDexFile.o ReferenceTable.o SignalCatcher.o  StdioConverter.o Sync.o TestCompability.o Thread.o UtfString.o  alloc/clz.o alloc/Alloc.o alloc/HeapBitmap.o alloc/HeapDebug.o alloc/HeapSource.o alloc/HeapTable.o alloc/HeapWorker.o alloc/Heap.o alloc/MarkSweep.o alloc/DdmHeap.o analysis/CodeVerify.o analysis/DexOptimize.o analysis/DexVerify.o  analysis/ReduceConstants.o analysis/RegisterMap.o analysis/VerifySubs.o  interp/Interp.o interp/Stack.o jdwp/ExpandBuf.o jdwp/JdwpAdb.o jdwp/JdwpConstants.o jdwp/JdwpEvent.o jdwp/JdwpHandler.o jdwp/JdwpMain.o jdwp/JdwpSocket.o  mterp/Mterp.o mterp/out/InterpC-portstd.o  mterp/out/InterpC-portdbg.o native/InternalNative.o native/dalvik_system_DexFile.o native/dalvik_system_SamplingProfiler.o native/dalvik_system_VMDebug.o native/dalvik_system_VMRuntime.o native/dalvik_system_VMStack.o native/dalvik_system_Zygote.o native/java_lang_Class.o native/java_lang_Object.o native/java_lang_Runtime.o native/java_lang_String.o native/java_lang_System.o native/java_lang_SystemProperties.o native/java_lang_Throwable.o native/java_lang_VMClassLoader.o native/java_lang_VMThread.o native/java_lang_reflect_AccessibleObject.o native/java_lang_reflect_Array.o native/java_lang_reflect_Constructor.o native/java_lang_reflect_Field.o native/java_lang_reflect_Method.o native/java_lang_reflect_Proxy.o native/java_security_AccessController.o native/java_util_concurrent_atomic_AtomicLong.o native/org_apache_harmony_dalvik_NativeTestTarget.o native/org_apache_harmony_dalvik_ddmc_DdmServer.o native/org_apache_harmony_dalvik_ddmc_DdmVmInternal.o native/sun_misc_Unsafe.o native/SystemThread.o oo/AccessCheck.o oo/Array.o oo/Class.o oo/Object.o oo/Resolve.o oo/TypeCheck.o reflect/Annotation.o reflect/Proxy.o reflect/Reflect.o test/AtomicSpeed.o test/TestHash.o test/TestIndirectRefTable.o arch/generic/Call.o arch/generic/Hints.o mterp/out/InterpC-allstubs.o
+make[1]: Leaving directory '/home/wmt/dalvik_linux_port/dalvik/vm'
+make -C ./dalvik/libnativehelper all
+make[1]: Entering directory '/home/wmt/dalvik_linux_port/dalvik/libnativehelper'
+gcc -I.. -I../../frameworks/base/include -I../../system/core/include -I../../externel/safe-iop/include -I./include/nativehelper -o Register.o -c Register.c
+Register.c: In function ‘jniRegisterSystemMethods’:
+Register.c:81:9: warning: implicit declaration of function ‘register_com_ibm_icu4jni_text_NativeNormalizer’; did you mean ‘register_com_ibm_icu4jni_text_NativeCollator’? [-Wimplicit-function-declaration]
+   81 |     if (register_com_ibm_icu4jni_text_NativeNormalizer(env) != 0)
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         register_com_ibm_icu4jni_text_NativeCollator
+gcc -I.. -I../../frameworks/base/include -I../../system/core/include -I../../externel/safe-iop/include -I./include/nativehelper -o JNIHelp.o -c JNIHelp.c
+JNIHelp.c: In function ‘jniStrError’:
+JNIHelp.c:166:17: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  166 |     char* ret = (char*) strerror_r(errnum, buf, buflen);
+      |                 ^
+JNIHelp.c:167:10: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  167 |     if (((int)ret) == 0) {
+      |          ^
+JNIHelp.c:170:17: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  170 |     } else if (((int)ret) == -1) {
+      |                 ^
+ar rcs libnativehelper.a Register.o JNIHelp.o
+make[1]: Leaving directory '/home/wmt/dalvik_linux_port/dalvik/libnativehelper'
+make -C ./dalvik/dexdump all
+make[1]: Entering directory '/home/wmt/dalvik_linux_port/dalvik/dexdump'
+gcc -I.. -I../../frameworks/base/include -I../../system/core/include -I../../externel/safe-iop/include -DNDEBUG -o DexDump.o -c DexDump.c
+In file included from DexDump.c:32:
+../libdex/DexFile.h: In function ‘dexGetTries’:
+../libdex/DexFile.h:748:11: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  748 |     if ((((u4) insnsEnd) & 3) != 0) {
+      |           ^
+DexDump.c: In function ‘dumpInstruction’:
+DexDump.c:607:16: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 2 has type ‘long int’ [-Wformat=]
+  607 |     printf("%06x:", ((u1*)insns - pDexFile->baseAddr) + insnIdx*2);
+      |             ~~~^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                |                                      |
+      |                unsigned int                           long int
+      |             %06lx
+DexDump.c: In function ‘align32’:
+DexDump.c:1400:20: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ 1400 |     return (u1*) (((int) ptr + 3) & ~0x03);
+      |                    ^
+DexDump.c:1400:12: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ 1400 |     return (u1*) (((int) ptr + 3) & ~0x03);
+      |            ^
+gcc -I.. -I../../frameworks/base/include -I../../system/core/include -I../../externel/safe-iop/include -DNDEBUG -o OpCodeNames.o -c OpCodeNames.c
+gcc -I.. -I../../frameworks/base/include -I../../system/core/include -I../../externel/safe-iop/include -DNDEBUG -o dexdump DexDump.o OpCodeNames.o ../libdex/libdex.a ../../system/core/liblog/liblog.a -lz
+make[1]: Leaving directory '/home/wmt/dalvik_linux_port/dalvik/dexdump'
+make -C ./dalvik/dexlist all
+make[1]: Entering directory '/home/wmt/dalvik_linux_port/dalvik/dexlist'
+gcc -I.. -I../../frameworks/base/include -I../../system/core/include -I../../externel/safe-iop/include -o DexList.o -c DexList.c
+In file included from DexList.c:20:
+../libdex/DexFile.h: In function ‘dexGetTries’:
+../libdex/DexFile.h:748:11: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  748 |     if ((((u4) insnsEnd) & 3) != 0) {
+      |           ^
+gcc -I.. -I../../frameworks/base/include -I../../system/core/include -I../../externel/safe-iop/include -o dexlist DexList.o ../libdex/libdex.a ../../system/core/liblog/liblog.a -lz
+make[1]: Leaving directory '/home/wmt/dalvik_linux_port/dalvik/dexlist'
+make -C ./dalvik/dexopt all
+make[1]: Entering directory '/home/wmt/dalvik_linux_port/dalvik/dexopt'
+gcc -I.. -I../../frameworks/base/include -I../../system/core/include -I../../externel/safe-iop/include -I../vm -I../libnativehelper/include/nativehelper -DUSE_DL_PREFIX=1 -DANDROID=1 -DNO_MALLINFO=1  -DHAVE_SCHED_H -DHAVE_PTHREADS=1 -o OptMain.o -c OptMain.c
+In file included from ../vm/Dalvik.h:25,
+                 from OptMain.c:35:
+../vm/Common.h:122: warning: "__BYTE_ORDER" redefined
+  122 | #  define __BYTE_ORDER __BIG_ENDIAN
+      | 
+In file included from /usr/include/x86_64-linux-gnu/bits/endian.h:35,
+                 from /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:6,
+                 from /usr/include/sched.h:32,
+                 from /usr/include/pthread.h:22,
+                 from ../vm/Dalvik.h:23,
+                 from OptMain.c:35:
+/usr/include/x86_64-linux-gnu/bits/endianness.h:9: note: this is the location of the previous definition
+    9 | #define __BYTE_ORDER __LITTLE_ENDIAN
+      | 
+In file included from ../vm/Dalvik.h:30,
+                 from OptMain.c:35:
+../libdex/DexFile.h: In function ‘dexGetTries’:
+../libdex/DexFile.h:748:11: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  748 |     if ((((u4) insnsEnd) & 3) != 0) {
+      |           ^
+In file included from ../vm/Dalvik.h:47,
+                 from OptMain.c:35:
+../vm/IndirectRefTable.h: In function ‘dvmObjectToIndirectRef’:
+../vm/IndirectRefTable.h:220:12: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  220 |     return (IndirectRef) uref;
+      |            ^
+../vm/IndirectRefTable.h: In function ‘dvmIndirectRefToIndex’:
+../vm/IndirectRefTable.h:230:15: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  230 |     u4 uref = (u4) iref;
+      |               ^
+../vm/IndirectRefTable.h: In function ‘dvmGetIndirectRefType’:
+../vm/IndirectRefTable.h:239:12: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  239 |     return (u4) iref & 0x03;
+      |            ^
+In file included from ../vm/Dalvik.h:57,
+                 from OptMain.c:35:
+../vm/alloc/Alloc.h: In function ‘dvmValidateObject’:
+../vm/alloc/Alloc.h:144:32: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  144 |     if (obj->clazz == NULL || ((u4) obj->clazz) <= 65536) {
+      |                                ^
+In file included from ../vm/Dalvik.h:67,
+                 from OptMain.c:35:
+../vm/JniInternal.h: In function ‘dvmObfuscateWeakGlobalRef’:
+../vm/JniInternal.h:228:21: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  228 |     return (jweak) ((u4) jobj ^ WEAK_GLOBAL_XOR);
+      |                     ^
+../vm/JniInternal.h:228:12: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  228 |     return (jweak) ((u4) jobj ^ WEAK_GLOBAL_XOR);
+      |            ^
+../vm/JniInternal.h: In function ‘dvmNormalizeWeakGlobalRef’:
+../vm/JniInternal.h:235:23: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  235 |     return (jobject) ((u4) ref ^ WEAK_GLOBAL_XOR);
+      |                       ^
+../vm/JniInternal.h:235:12: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  235 |     return (jobject) ((u4) ref ^ WEAK_GLOBAL_XOR);
+      |            ^
+../vm/JniInternal.h: In function ‘dvmIsWeakGlobalRef’:
+../vm/JniInternal.h:245:14: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  245 |     return (((u4) jobj & 0x07) == 0x07);
+      |              ^
+gcc -I.. -I../../frameworks/base/include -I../../system/core/include -I../../externel/safe-iop/include -I../vm -I../libnativehelper/include/nativehelper -DUSE_DL_PREFIX=1 -DANDROID=1 -DNO_MALLINFO=1  -DHAVE_SCHED_H -DHAVE_PTHREADS=1 -o ../../system/core/libcutils/mspace.o -c ../../system/core/libcutils/mspace.c
+../../system/core/libcutils/mspace.c: In function ‘create_contiguous_mspace_with_base’:
+../../system/core/libcutils/mspace.c:196:38: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 3 has type ‘char *’ [-Wformat=]
+  196 | fprintf(stderr, "=================> %x, %d, %d\n", prot_brk, prot_brk - (char *)base, cs->top - prot_brk);
+      |                                     ~^             ~~~~~~~~
+      |                                      |             |
+      |                                      unsigned int  char *
+      |                                     %s
+../../system/core/libcutils/mspace.c:196:42: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘long int’ [-Wformat=]
+  196 | fprintf(stderr, "=================> %x, %d, %d\n", prot_brk, prot_brk - (char *)base, cs->top - prot_brk);
+      |                                         ~^                   ~~~~~~~~~~~~~~~~~~~~~~~
+      |                                          |                            |
+      |                                          int                          long int
+      |                                         %ld
+../../system/core/libcutils/mspace.c:196:46: warning: format ‘%d’ expects argument of type ‘int’, but argument 5 has type ‘long int’ [-Wformat=]
+  196 | fprintf(stderr, "=================> %x, %d, %d\n", prot_brk, prot_brk - (char *)base, cs->top - prot_brk);
+      |                                             ~^                                        ~~~~~~~~~~~~~~~~~~
+      |                                              |                                                |
+      |                                              int                                              long int
+      |                                             %ld
+gcc -I.. -I../../frameworks/base/include -I../../system/core/include -I../../externel/safe-iop/include -I../vm -I../libnativehelper/include/nativehelper -DUSE_DL_PREFIX=1 -DANDROID=1 -DNO_MALLINFO=1  -DHAVE_SCHED_H -DHAVE_PTHREADS=1 -o ../../bionic/libc/bionic/dlmalloc.o -c ../../bionic/libc/bionic/dlmalloc.c
+../../bionic/libc/bionic/dlmalloc.c: In function ‘mmap_resize’:
+../../bionic/libc/bionic/dlmalloc.c:1467:41: warning: implicit declaration of function ‘mremap’; did you mean ‘munmap’? [-Wimplicit-function-declaration]
+ 1467 | #define CALL_MREMAP(addr, osz, nsz, mv) mremap((addr), (osz), (nsz), (mv))
+      |                                         ^~~~~~
+../../bionic/libc/bionic/dlmalloc.c:3305:23: note: in expansion of macro ‘CALL_MREMAP’
+ 3305 |     char* cp = (char*)CALL_MREMAP((char*)oldp - offset,
+      |                       ^~~~~~~~~~~
+../../bionic/libc/bionic/dlmalloc.c:3305:16: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ 3305 |     char* cp = (char*)CALL_MREMAP((char*)oldp - offset,
+      |                ^
+../../bionic/libc/bionic/dlmalloc.c: In function ‘sys_trim’:
+../../bionic/libc/bionic/dlmalloc.c:3748:62: warning: comparison between pointer and integer
+ 3748 |             if ((CALL_MREMAP(sp->base, sp->size, newsize, 0) != MFAIL) ||
+      |                                                              ^~
+gcc -I.. -I../../frameworks/base/include -I../../system/core/include -I../../externel/safe-iop/include -I../vm -I../libnativehelper/include/nativehelper -DUSE_DL_PREFIX=1 -DANDROID=1 -DNO_MALLINFO=1  -DHAVE_SCHED_H -DHAVE_PTHREADS=1 -o ../../system/core/libcutils/ashmem-host.o -c ../../system/core/libcutils/ashmem-host.c
+gcc -I.. -I../../frameworks/base/include -I../../system/core/include -I../../externel/safe-iop/include -I../vm -I../libnativehelper/include/nativehelper -DUSE_DL_PREFIX=1 -DANDROID=1 -DNO_MALLINFO=1  -DHAVE_SCHED_H -DHAVE_PTHREADS=1 -o ../../system/core/libcutils/atomic.o -c ../../system/core/libcutils/atomic.c
+gcc -I.. -I../../frameworks/base/include -I../../system/core/include -I../../externel/safe-iop/include -I../vm -I../libnativehelper/include/nativehelper -DUSE_DL_PREFIX=1 -DANDROID=1 -DNO_MALLINFO=1  -DHAVE_SCHED_H -DHAVE_PTHREADS=1 -o ../../system/core/libcutils/sched_policy.o -c ../../system/core/libcutils/sched_policy.c
+gcc -I.. -I../../frameworks/base/include -I../../system/core/include -I../../externel/safe-iop/include -I../vm -I../libnativehelper/include/nativehelper -DUSE_DL_PREFIX=1 -DANDROID=1 -DNO_MALLINFO=1  -DHAVE_SCHED_H -DHAVE_PTHREADS=1 -o ../../system/core/libcutils/process_name.o -c ../../system/core/libcutils/process_name.c
+../../system/core/libcutils/process_name.c: In function ‘set_process_name’:
+../../system/core/libcutils/process_name.c:43:26: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]
+   43 |     char* copy = (char*) malloc(len + 1);
+      |                          ^~~~~~
+../../system/core/libcutils/process_name.c:43:26: warning: incompatible implicit declaration of built-in function ‘malloc’
+../../system/core/libcutils/process_name.c:24:1: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’
+   23 | #include <fcntl.h>
+  +++ |+#include <stdlib.h>
+   24 | 
+gcc -I.. -I../../frameworks/base/include -I../../system/core/include -I../../externel/safe-iop/include -I../vm -I../libnativehelper/include/nativehelper -DUSE_DL_PREFIX=1 -DANDROID=1 -DNO_MALLINFO=1  -DHAVE_SCHED_H -DHAVE_PTHREADS=1 -o ../../system/core/libcutils/properties.o -c ../../system/core/libcutils/properties.c
+gcc -I.. -I../../frameworks/base/include -I../../system/core/include -I../../externel/safe-iop/include -I../vm -I../libnativehelper/include/nativehelper -DUSE_DL_PREFIX=1 -DANDROID=1 -DNO_MALLINFO=1  -DHAVE_SCHED_H -DHAVE_PTHREADS=1 -o Register.o -c Register.c
+gcc -I.. -I../../frameworks/base/include -I../../system/core/include -I../../externel/safe-iop/include -I../vm -I../libnativehelper/include/nativehelper -DUSE_DL_PREFIX=1 -DANDROID=1 -DNO_MALLINFO=1  -DHAVE_SCHED_H -DHAVE_PTHREADS=1 -o dexopt OptMain.o  ../../system/core/libcutils/mspace.o  ../../bionic/libc/bionic/dlmalloc.o  ../../system/core/libcutils/ashmem-host.o  ../../system/core/libcutils/atomic.o  ../../system/core/libcutils/sched_policy.o ../../system/core/libcutils/process_name.o  ../../system/core/libcutils/properties.o Register.o ../vm/libdvm.a ../libdex/libdex.a ../../system/core/liblog/liblog.a -lz -lffi -lpthread -lm -ldl
+make[1]: Leaving directory '/home/wmt/dalvik_linux_port/dalvik/dexopt'
+make -C ./dalvik/dvz all
+make[1]: Entering directory '/home/wmt/dalvik_linux_port/dalvik/dvz'
+gcc -I.. -I../../frameworks/base/include -I../../system/core/include -I../../externel/safe-iop/include -o dvz.o -c dvz.c
+dvz.c: In function ‘post_run_func’:
+dvz.c:70:9: warning: implicit declaration of function ‘memset’ [-Wimplicit-function-declaration]
+   70 |         memset(&sa, 0, sizeof(sa));
+      |         ^~~~~~
+dvz.c:70:9: warning: incompatible implicit declaration of built-in function ‘memset’
+dvz.c:25:1: note: include ‘<string.h>’ or provide a declaration of ‘memset’
+   24 | #include <sys/wait.h>
+  +++ |+#include <string.h>
+   25 | #include <signal.h>
+dvz.c: In function ‘main’:
+dvz.c:97:26: warning: implicit declaration of function ‘strcmp’ [-Wimplicit-function-declaration]
+   97 |     if (argc > 1 && 0 == strcmp(argv[1], "--help")) {
+      |                          ^~~~~~
+gcc -I.. -I../../frameworks/base/include -I../../system/core/include -I../../externel/safe-iop/include -o ../../system/core/libcutils/zygote.o -c ../../system/core/libcutils/zygote.c
+gcc -I.. -I../../frameworks/base/include -I../../system/core/include -I../../externel/safe-iop/include -o ../../system/core/libcutils/socket_local_client.o -c ../../system/core/libcutils/socket_local_client.c
+gcc -I.. -I../../frameworks/base/include -I../../system/core/include -I../../externel/safe-iop/include -o dvz dvz.o ../../system/core/libcutils/zygote.o ../../system/core/libcutils/socket_local_client.o 
+make[1]: Leaving directory '/home/wmt/dalvik_linux_port/dalvik/dvz'
+make -C ./dalvik/dalvikvm all
+make[1]: Entering directory '/home/wmt/dalvik_linux_port/dalvik/dalvikvm'
+gcc -I../libnativehelper/include/nativehelper -I.. -I../../frameworks/base/include -I../../system/core/include -I../../externel/safe-iop/include -DUSE_DL_PREFIX=1 -DANDROID=1 -DNO_MALLINFO=1  -DHAVE_SCHED_H -DHAVE_PTHREADS=1 -g3 -O0 -o Main.o -c Main.c
+gcc -I../libnativehelper/include/nativehelper -I.. -I../../frameworks/base/include -I../../system/core/include -I../../externel/safe-iop/include -DUSE_DL_PREFIX=1 -DANDROID=1 -DNO_MALLINFO=1  -DHAVE_SCHED_H -DHAVE_PTHREADS=1 -g3 -O0 -o Register.o -c Register.c
+gcc -I../libnativehelper/include/nativehelper -I.. -I../../frameworks/base/include -I../../system/core/include -I../../externel/safe-iop/include -DUSE_DL_PREFIX=1 -DANDROID=1 -DNO_MALLINFO=1  -DHAVE_SCHED_H -DHAVE_PTHREADS=1 -g3 -O0 -o dalvikvm Main.o  ../../system/core/libcutils/mspace.o  ../../bionic/libc/bionic/dlmalloc.o  ../../system/core/libcutils/ashmem-host.o  ../../system/core/libcutils/atomic.o  ../../system/core/libcutils/sched_policy.o Register.o ../vm/libdvm.a ../libdex/libdex.a ../../system/core/liblog/liblog.a -lz -lffi -lm -lpthread -ldl
+make[1]: Leaving directory '/home/wmt/dalvik_linux_port/dalvik/dalvikvm'
+wmt@wmt-VirtualBox:~/dalvik_linux_port$ cd dalvik/dalvikvm/
+wmt@wmt-VirtualBox:~/dalvik_linux_port/dalvik/dalvikvm$ make test
+#./dalvikvm -Xbootclasspath:./foo.jar -classpath foo.jar Foo
+./dalvikvm -Xbootclasspath:/data/core.jar:/data/ext.jar:/data/framework.jar -classpath /data/foo.jar Foo
+[android_log_print][VERBOSE][dalvikvm]VM init args (3):
+[android_log_print][VERBOSE][dalvikvm]  0: '-Xbootclasspath:/data/core.jar:/data/ext.jar:/data/framework.jar'
+[android_log_print][VERBOSE][dalvikvm]  1: '-classpath'
+[android_log_print][VERBOSE][dalvikvm]  2: '/data/foo.jar'
+[android_log_print][VERBOSE][dalvikvm]VM options (3):
+[android_log_print][VERBOSE][dalvikvm]  0: '-Xbootclasspath:/data/core.jar:/data/ext.jar:/data/framework.jar'
+[android_log_print][VERBOSE][dalvikvm]  1: '-classpath'
+[android_log_print][VERBOSE][dalvikvm]  2: '/data/foo.jar'
+[android_log_print][VERBOSE][dalvikvm]Using kernel scheduler policies[android_log_print][VERBOSE][dalvikvm]Using executionMode 2
+[android_log_print][VERBOSE][dalvikvm-heap]Creating VM heap of size 2097152
+=================> create_contiguous_mspace_with_base
+mprotect Error: Cannot allocate memory
+=================> e9e0a000, 1052672, 15724544
+[android_log_print][VERBOSE][dalvikvm]threadid=1: interp stack at 0x7f60eb0b2000
+[android_log_print][VERBOSE][dalvikvm]LinearAlloc: created region at 0x7f60e97c9000-0x7f60e9cc8fff
+[android_log_print][VERBOSE][dalvikvm]Opening archive '/data/core.jar' 0x7ffdb386b010
+[android_log_print][VERBOSE][dalvikvm]+++ numEntries=37 cdOffset=2151751
+[android_log_print][VERBOSE][dalvikvm]Couldn't open /data/core.odex: No such file or directory
+[android_log_print][VERBOSE][dalvikvm]Cache file for '/data/core.jar' 'classes.dex' is '/data/dalvik-cache/data@core.jar@classes.dex'
+[android_log_print][VERBOSE][dalvikvm]dvmDexCacheStatus: Checking cache for /data/core.jar (/data/dalvik-cache/data@core.jar@classes.dex)
+[android_log_print][VERBOSE][dalvikvm]DexOpt: locking cache file /data/dalvik-cache/data@core.jar@classes.dex (fd=4, boot=1)
+[android_log_print][VERBOSE][dalvikvm]DexOpt:  locked cache file
+[android_log_print][VERBOSE][dalvikvm]DexOpt: successfully initialized new cache file
+[android_log_print][DEBUG][dalvikvm]DexOpt: --- BEGIN 'core.jar' (bootstrap=1) ---
+[android_log_print][VERBOSE][dalvikvm]DexOpt: waiting for verify+opt, pid=2046
+[android_log_print][WARN][dalvikvm]ANDROID_ROOT not set, defaulting to /system
+[android_log_print][ERROR][dalvikvm]execv '/system/bin/dexopt' failed: No such file or directory
+[android_log_print][WARN][dalvikvm]DexOpt: --- END 'core.jar' --- status=0x0100, process failed
+[android_log_print][ERROR][dalvikvm]Unable to extract+optimize DEX from '/data/core.jar'
+[android_log_print][VERBOSE][dalvikvm]Closing archive 0x7ffdb386b010
+[android_log_print][DEBUG][dalvikvm]Unable to process classpath element '/data/core.jar'
+[android_log_print][VERBOSE][dalvikvm]Opening archive '/data/ext.jar' 0x7ffdb386b010
+[android_log_print][VERBOSE][dalvikvm]+++ numEntries=3 cdOffset=234576
+[android_log_print][VERBOSE][dalvikvm]Couldn't open /data/ext.odex: No such file or directory
+[android_log_print][VERBOSE][dalvikvm]Cache file for '/data/ext.jar' 'classes.dex' is '/data/dalvik-cache/data@ext.jar@classes.dex'
+[android_log_print][VERBOSE][dalvikvm]dvmDexCacheStatus: Checking cache for /data/ext.jar (/data/dalvik-cache/data@ext.jar@classes.dex)
+[android_log_print][VERBOSE][dalvikvm]DexOpt: locking cache file /data/dalvik-cache/data@ext.jar@classes.dex (fd=4, boot=1)
+[android_log_print][VERBOSE][dalvikvm]DexOpt:  locked cache file
+[android_log_print][VERBOSE][dalvikvm]DexOpt: successfully initialized new cache file
+[android_log_print][DEBUG][dalvikvm]DexOpt: --- BEGIN 'ext.jar' (bootstrap=1) ---
+[android_log_print][VERBOSE][dalvikvm]DexOpt: waiting for verify+opt, pid=2047
+[android_log_print][WARN][dalvikvm]ANDROID_ROOT not set, defaulting to /system
+[android_log_print][ERROR][dalvikvm]execv '/system/bin/dexopt' failed: No such file or directory
+[android_log_print][WARN][dalvikvm]DexOpt: --- END 'ext.jar' --- status=0x0100, process failed
+[android_log_print][ERROR][dalvikvm]Unable to extract+optimize DEX from '/data/ext.jar'
+[android_log_print][VERBOSE][dalvikvm]Closing archive 0x7ffdb386b010
+[android_log_print][DEBUG][dalvikvm]Unable to process classpath element '/data/ext.jar'
+[android_log_print][VERBOSE][dalvikvm]Opening archive '/data/framework.jar' 0x7ffdb386b010
+[android_log_print][VERBOSE][dalvikvm]+++ numEntries=4 cdOffset=2711662
+[android_log_print][VERBOSE][dalvikvm]Couldn't open /data/framework.odex: No such file or directory
+[android_log_print][VERBOSE][dalvikvm]Cache file for '/data/framework.jar' 'classes.dex' is '/data/dalvik-cache/data@framework.jar@classes.dex'
+[android_log_print][VERBOSE][dalvikvm]dvmDexCacheStatus: Checking cache for /data/framework.jar (/data/dalvik-cache/data@framework.jar@classes.dex)
+[android_log_print][VERBOSE][dalvikvm]DexOpt: locking cache file /data/dalvik-cache/data@framework.jar@classes.dex (fd=4, boot=1)
+[android_log_print][VERBOSE][dalvikvm]DexOpt:  locked cache file
+[android_log_print][VERBOSE][dalvikvm]DexOpt: successfully initialized new cache file
+[android_log_print][DEBUG][dalvikvm]DexOpt: --- BEGIN 'framework.jar' (bootstrap=1) ---
+[android_log_print][VERBOSE][dalvikvm]DexOpt: waiting for verify+opt, pid=2048
+[android_log_print][WARN][dalvikvm]ANDROID_ROOT not set, defaulting to /system
+[android_log_print][ERROR][dalvikvm]execv '/system/bin/dexopt' failed: No such file or directory
+[android_log_print][WARN][dalvikvm]DexOpt: --- END 'framework.jar' --- status=0x0100, process failed
+[android_log_print][ERROR][dalvikvm]Unable to extract+optimize DEX from '/data/framework.jar'
+[android_log_print][VERBOSE][dalvikvm]Closing archive 0x7ffdb386b010
+[android_log_print][DEBUG][dalvikvm]Unable to process classpath element '/data/framework.jar'
+[android_log_print][ERROR][dalvikvm]ERROR: no valid entries found in bootclasspath '/data/core.jar:/data/ext.jar:/data/framework.jar'
+[android_log_print][VERBOSE][dalvikvm]VM shutting down
+make: *** [Makefile:42: test] Segmentation fault (core dumped)
+wmt@wmt-VirtualBox:~/dalvik_linux_port/dalvik/dalvikvm$ mkdir /system
+mkdir: cannot create directory ‘/system’: Permission denied
+wmt@wmt-VirtualBox:~/dalvik_linux_port/dalvik/dalvikvm$ sudo mkdir /system
+wmt@wmt-VirtualBox:~/dalvik_linux_port/dalvik/dalvikvm$ sudo mkdir /system/bin
+wmt@wmt-VirtualBox:~/dalvik_linux_port/dalvik/dalvikvm$ sudo chown -R wmt:wmt /system
+wmt@wmt-VirtualBox:~/dalvik_linux_port/dalvik/dalvikvm$ cd ..
+wmt@wmt-VirtualBox:~/dalvik_linux_port/dalvik$ ls
+Android.mk    dexopt   libcore-disabled        NOTICE             vm
+CleanSpec.mk  docs     libdex                  README.txt
+dalvikvm      dvz      libnativehelper         run-core-tests.sh
+dexdump       hit      MODULE_LICENSE_APACHE2  tests
+dexlist       libcore  mypath.txt              tools
+wmt@wmt-VirtualBox:~/dalvik_linux_port/dalvik$ cd dexopt
+wmt@wmt-VirtualBox:~/dalvik_linux_port/dalvik/dexopt$ ls
+Android.mk  Makefile   OptMain.o   Register.c.xxx.txt
+dexopt      OptMain.c  Register.c  Register.o
+wmt@wmt-VirtualBox:~/dalvik_linux_port/dalvik/dexopt$ cp dexopt /system/bin
+wmt@wmt-VirtualBox:~/dalvik_linux_port/dalvik/dexopt$ ls
+Android.mk  Makefile   OptMain.o   Register.c.xxx.txt
+dexopt      OptMain.c  Register.c  Register.o
+wmt@wmt-VirtualBox:~/dalvik_linux_port/dalvik/dexopt$ ls /system/bin
+dexopt
+wmt@wmt-VirtualBox:~/dalvik_linux_port/dalvik/dexopt$ cd ../dalvikvm/
+wmt@wmt-VirtualBox:~/dalvik_linux_port/dalvik/dalvikvm$ ls
+Android.mk  foo.jar      Main.c    readme.txt          Register.o
+dalvikvm    framework    Main.o    Register.c
+foo         gdbinit.txt  Makefile  Register.c.xxx.txt
+wmt@wmt-VirtualBox:~/dalvik_linux_port/dalvik/dalvikvm$ make test
+#./dalvikvm -Xbootclasspath:./foo.jar -classpath foo.jar Foo
+./dalvikvm -Xbootclasspath:/data/core.jar:/data/ext.jar:/data/framework.jar -classpath /data/foo.jar Foo
+[android_log_print][VERBOSE][dalvikvm]VM init args (3):
+[android_log_print][VERBOSE][dalvikvm]  0: '-Xbootclasspath:/data/core.jar:/data/ext.jar:/data/framework.jar'
+[android_log_print][VERBOSE][dalvikvm]  1: '-classpath'
+[android_log_print][VERBOSE][dalvikvm]  2: '/data/foo.jar'
+[android_log_print][VERBOSE][dalvikvm]VM options (3):
+[android_log_print][VERBOSE][dalvikvm]  0: '-Xbootclasspath:/data/core.jar:/data/ext.jar:/data/framework.jar'
+[android_log_print][VERBOSE][dalvikvm]  1: '-classpath'
+[android_log_print][VERBOSE][dalvikvm]  2: '/data/foo.jar'
+[android_log_print][VERBOSE][dalvikvm]Using kernel scheduler policies[android_log_print][VERBOSE][dalvikvm]Using executionMode 2
+[android_log_print][VERBOSE][dalvikvm-heap]Creating VM heap of size 2097152
+=================> create_contiguous_mspace_with_base
+mprotect Error: Cannot allocate memory
+=================> 60332000, 1052672, 15724544
+[android_log_print][VERBOSE][dalvikvm]threadid=1: interp stack at 0x7f95615da000
+[android_log_print][VERBOSE][dalvikvm]LinearAlloc: created region at 0x7f955fcf1000-0x7f95601f0fff
+[android_log_print][VERBOSE][dalvikvm]Opening archive '/data/core.jar' 0x7ffef967a6d0
+[android_log_print][VERBOSE][dalvikvm]+++ numEntries=37 cdOffset=2151751
+[android_log_print][VERBOSE][dalvikvm]Couldn't open /data/core.odex: No such file or directory
+[android_log_print][VERBOSE][dalvikvm]Cache file for '/data/core.jar' 'classes.dex' is '/data/dalvik-cache/data@core.jar@classes.dex'
+[android_log_print][VERBOSE][dalvikvm]dvmDexCacheStatus: Checking cache for /data/core.jar (/data/dalvik-cache/data@core.jar@classes.dex)
+[android_log_print][VERBOSE][dalvikvm]DexOpt: locking cache file /data/dalvik-cache/data@core.jar@classes.dex (fd=4, boot=1)
+[android_log_print][VERBOSE][dalvikvm]DexOpt:  locked cache file
+[android_log_print][VERBOSE][dalvikvm]checking deps, expecting vfy=1 opt=1
+[android_log_print][DEBUG][dalvikvm]DexOpt: incorrect opt magic number (0xff ff ff ff)
+[android_log_print][DEBUG][dalvikvm]Stale deps in cache file; removing and retrying
+[android_log_print][VERBOSE][dalvikvm]DexOpt: locking cache file /data/dalvik-cache/data@core.jar@classes.dex (fd=4, boot=1)
+[android_log_print][VERBOSE][dalvikvm]DexOpt:  locked cache file
+[android_log_print][VERBOSE][dalvikvm]DexOpt: successfully initialized new cache file
+[android_log_print][DEBUG][dalvikvm]DexOpt: --- BEGIN 'core.jar' (bootstrap=1) ---
+[android_log_print][VERBOSE][dalvikvm]DexOpt: waiting for verify+opt, pid=2078
+[android_log_print][WARN][dalvikvm]ANDROID_ROOT not set, defaulting to /system
+[android_log_print][VERBOSE][dalvikvm]Args: fd=4 off=40 len=4911856 name='/data/core.jar' mod=0x3cde708c crc=0xfaf09ea5 flg=29 (argc=1)
+[android_log_print][VERBOSE][dalvikvm]  bootclasspath is ''
+[android_log_print][VERBOSE][dalvikvm-heap]Creating VM heap of size 2097152
+=================> create_contiguous_mspace_with_base
+mprotect Error: Cannot allocate memory
+=================> ceef3000, 1052672, 15724544
+[android_log_print][VERBOSE][dalvikvm]threadid=1: interp stack at 0x7f4cd019b000
+[android_log_print][VERBOSE][dalvikvm]LinearAlloc: created region at 0x7f4cce8b2000-0x7f4ccedb1fff
+[android_log_print][VERBOSE][dalvikvm]Continuing optimization (/data/core.jar, isb=1, vfy=1, opt=1)
+[android_log_print][VERBOSE][dalvikvm]+++ swapping bytes
+[android_log_print][VERBOSE][dalvikvm]+++ swapping and verifying
+dexopt: DexSwapVerify.c:407: swapMap: Assertion `((((((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a))(-((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a))(~((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a)) 1 << ((sizeof(typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a)) * 8) - 1)))) - 1)) <= ((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a))0)) && (((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))(-((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))(~((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b)) 1 << ((sizeof(typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b)) * 8) - 1)))) - 1)) <= ((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))0))) || (((((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a))(-((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a))(~((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a)) 1 << ((sizeof(typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a)) * 8) - 1)))) - 1)) > ((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a))0))) && (((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))(-((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))(~((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b)) 1 << ((sizeof(typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b)) * 8) - 1)))) - 1)) > ((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))0)))) && (sizeof(typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a)) == sizeof(typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))))' failed.
+[android_log_print][WARN][dalvikvm]DexOpt: --- END 'core.jar' --- status=0x0086, process failed
+[android_log_print][ERROR][dalvikvm]Unable to extract+optimize DEX from '/data/core.jar'
+[android_log_print][VERBOSE][dalvikvm]Closing archive 0x7ffef967a6d0
+[android_log_print][DEBUG][dalvikvm]Unable to process classpath element '/data/core.jar'
+[android_log_print][VERBOSE][dalvikvm]Opening archive '/data/ext.jar' 0x7ffef967a6d0
+[android_log_print][VERBOSE][dalvikvm]+++ numEntries=3 cdOffset=234576
+[android_log_print][VERBOSE][dalvikvm]Couldn't open /data/ext.odex: No such file or directory
+[android_log_print][VERBOSE][dalvikvm]Cache file for '/data/ext.jar' 'classes.dex' is '/data/dalvik-cache/data@ext.jar@classes.dex'
+[android_log_print][VERBOSE][dalvikvm]dvmDexCacheStatus: Checking cache for /data/ext.jar (/data/dalvik-cache/data@ext.jar@classes.dex)
+[android_log_print][VERBOSE][dalvikvm]DexOpt: locking cache file /data/dalvik-cache/data@ext.jar@classes.dex (fd=4, boot=1)
+[android_log_print][VERBOSE][dalvikvm]DexOpt:  locked cache file
+[android_log_print][VERBOSE][dalvikvm]checking deps, expecting vfy=1 opt=1
+[android_log_print][DEBUG][dalvikvm]DexOpt: incorrect opt magic number (0xff ff ff ff)
+[android_log_print][DEBUG][dalvikvm]Stale deps in cache file; removing and retrying
+[android_log_print][VERBOSE][dalvikvm]DexOpt: locking cache file /data/dalvik-cache/data@ext.jar@classes.dex (fd=4, boot=1)
+[android_log_print][VERBOSE][dalvikvm]DexOpt:  locked cache file
+[android_log_print][VERBOSE][dalvikvm]DexOpt: successfully initialized new cache file
+[android_log_print][DEBUG][dalvikvm]DexOpt: --- BEGIN 'ext.jar' (bootstrap=1) ---
+[android_log_print][VERBOSE][dalvikvm]DexOpt: waiting for verify+opt, pid=2080
+[android_log_print][WARN][dalvikvm]ANDROID_ROOT not set, defaulting to /system
+[android_log_print][VERBOSE][dalvikvm]Args: fd=4 off=40 len=560024 name='/data/ext.jar' mod=0x3cde709b crc=0x40e5de20 flg=29 (argc=1)
+[android_log_print][VERBOSE][dalvikvm]  bootclasspath is ''
+[android_log_print][VERBOSE][dalvikvm-heap]Creating VM heap of size 2097152
+=================> create_contiguous_mspace_with_base
+mprotect Error: Cannot allocate memory
+=================> f1493000, 1052672, 15724544
+[android_log_print][VERBOSE][dalvikvm]threadid=1: interp stack at 0x7f22f273b000
+[android_log_print][VERBOSE][dalvikvm]LinearAlloc: created region at 0x7f22f0e52000-0x7f22f1351fff
+[android_log_print][VERBOSE][dalvikvm]Continuing optimization (/data/ext.jar, isb=1, vfy=1, opt=1)
+[android_log_print][VERBOSE][dalvikvm]+++ swapping bytes
+[android_log_print][VERBOSE][dalvikvm]+++ swapping and verifying
+dexopt: DexSwapVerify.c:407: swapMap: Assertion `((((((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a))(-((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a))(~((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a)) 1 << ((sizeof(typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a)) * 8) - 1)))) - 1)) <= ((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a))0)) && (((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))(-((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))(~((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b)) 1 << ((sizeof(typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b)) * 8) - 1)))) - 1)) <= ((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))0))) || (((((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a))(-((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a))(~((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a)) 1 << ((sizeof(typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a)) * 8) - 1)))) - 1)) > ((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a))0))) && (((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))(-((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))(~((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b)) 1 << ((sizeof(typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b)) * 8) - 1)))) - 1)) > ((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))0)))) && (sizeof(typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a)) == sizeof(typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))))' failed.
+[android_log_print][WARN][dalvikvm]DexOpt: --- END 'ext.jar' --- status=0x0086, process failed
+[android_log_print][ERROR][dalvikvm]Unable to extract+optimize DEX from '/data/ext.jar'
+[android_log_print][VERBOSE][dalvikvm]Closing archive 0x7ffef967a6d0
+[android_log_print][DEBUG][dalvikvm]Unable to process classpath element '/data/ext.jar'
+[android_log_print][VERBOSE][dalvikvm]Opening archive '/data/framework.jar' 0x7ffef967a6d0
+[android_log_print][VERBOSE][dalvikvm]+++ numEntries=4 cdOffset=2711662
+[android_log_print][VERBOSE][dalvikvm]Couldn't open /data/framework.odex: No such file or directory
+[android_log_print][VERBOSE][dalvikvm]Cache file for '/data/framework.jar' 'classes.dex' is '/data/dalvik-cache/data@framework.jar@classes.dex'
+[android_log_print][VERBOSE][dalvikvm]dvmDexCacheStatus: Checking cache for /data/framework.jar (/data/dalvik-cache/data@framework.jar@classes.dex)
+[android_log_print][VERBOSE][dalvikvm]DexOpt: locking cache file /data/dalvik-cache/data@framework.jar@classes.dex (fd=4, boot=1)
+[android_log_print][VERBOSE][dalvikvm]DexOpt:  locked cache file
+[android_log_print][VERBOSE][dalvikvm]checking deps, expecting vfy=1 opt=1
+[android_log_print][DEBUG][dalvikvm]DexOpt: incorrect opt magic number (0xff ff ff ff)
+[android_log_print][DEBUG][dalvikvm]Stale deps in cache file; removing and retrying
+[android_log_print][VERBOSE][dalvikvm]DexOpt: locking cache file /data/dalvik-cache/data@framework.jar@classes.dex (fd=4, boot=1)
+[android_log_print][VERBOSE][dalvikvm]DexOpt:  locked cache file
+[android_log_print][VERBOSE][dalvikvm]DexOpt: successfully initialized new cache file
+[android_log_print][DEBUG][dalvikvm]DexOpt: --- BEGIN 'framework.jar' (bootstrap=1) ---
+[android_log_print][VERBOSE][dalvikvm]DexOpt: waiting for verify+opt, pid=2083
+[android_log_print][WARN][dalvikvm]ANDROID_ROOT not set, defaulting to /system
+[android_log_print][VERBOSE][dalvikvm]Args: fd=4 off=40 len=6371256 name='/data/framework.jar' mod=0x3cde70b8 crc=0x585b86ff flg=29 (argc=1)
+[android_log_print][VERBOSE][dalvikvm]  bootclasspath is ''
+[android_log_print][VERBOSE][dalvikvm-heap]Creating VM heap of size 2097152
+=================> create_contiguous_mspace_with_base
+mprotect Error: Cannot allocate memory
+=================> 52f7e000, 1052672, 15724544
+[android_log_print][VERBOSE][dalvikvm]threadid=1: interp stack at 0x7fb554226000
+[android_log_print][VERBOSE][dalvikvm]LinearAlloc: created region at 0x7fb55293d000-0x7fb552e3cfff
+[android_log_print][VERBOSE][dalvikvm]Continuing optimization (/data/framework.jar, isb=1, vfy=1, opt=1)
+[android_log_print][VERBOSE][dalvikvm]+++ swapping bytes
+[android_log_print][VERBOSE][dalvikvm]+++ swapping and verifying
+dexopt: DexSwapVerify.c:407: swapMap: Assertion `((((((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a))(-((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a))(~((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a)) 1 << ((sizeof(typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a)) * 8) - 1)))) - 1)) <= ((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a))0)) && (((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))(-((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))(~((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b)) 1 << ((sizeof(typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b)) * 8) - 1)))) - 1)) <= ((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))0))) || (((((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a))(-((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a))(~((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a)) 1 << ((sizeof(typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a)) * 8) - 1)))) - 1)) > ((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a))0))) && (((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))(-((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))(~((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b)) 1 << ((sizeof(typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b)) * 8) - 1)))) - 1)) > ((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))0)))) && (sizeof(typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a)) == sizeof(typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))))' failed.
+[android_log_print][WARN][dalvikvm]DexOpt: --- END 'framework.jar' --- status=0x0086, process failed
+[android_log_print][ERROR][dalvikvm]Unable to extract+optimize DEX from '/data/framework.jar'
+[android_log_print][VERBOSE][dalvikvm]Closing archive 0x7ffef967a6d0
+[android_log_print][DEBUG][dalvikvm]Unable to process classpath element '/data/framework.jar'
+[android_log_print][ERROR][dalvikvm]ERROR: no valid entries found in bootclasspath '/data/core.jar:/data/ext.jar:/data/framework.jar'
+[android_log_print][VERBOSE][dalvikvm]VM shutting down
+make: *** [Makefile:42: test] Segmentation fault (core dumped)
+wmt@wmt-VirtualBox:~/dalvik_linux_port/dalvik/dalvikvm$ make test
+#./dalvikvm -Xbootclasspath:./foo.jar -classpath foo.jar Foo
+./dalvikvm -Xbootclasspath:/data/core.jar:/data/ext.jar:/data/framework.jar -classpath /data/foo.jar Foo
+[android_log_print][VERBOSE][dalvikvm]VM init args (3):
+[android_log_print][VERBOSE][dalvikvm]  0: '-Xbootclasspath:/data/core.jar:/data/ext.jar:/data/framework.jar'
+[android_log_print][VERBOSE][dalvikvm]  1: '-classpath'
+[android_log_print][VERBOSE][dalvikvm]  2: '/data/foo.jar'
+[android_log_print][VERBOSE][dalvikvm]VM options (3):
+[android_log_print][VERBOSE][dalvikvm]  0: '-Xbootclasspath:/data/core.jar:/data/ext.jar:/data/framework.jar'
+[android_log_print][VERBOSE][dalvikvm]  1: '-classpath'
+[android_log_print][VERBOSE][dalvikvm]  2: '/data/foo.jar'
+[android_log_print][VERBOSE][dalvikvm]Using kernel scheduler policies[android_log_print][VERBOSE][dalvikvm]Using executionMode 2
+[android_log_print][VERBOSE][dalvikvm-heap]Creating VM heap of size 2097152
+=================> create_contiguous_mspace_with_base
+mprotect Error: Cannot allocate memory
+=================> adc8b000, 1052672, 15724544
+[android_log_print][VERBOSE][dalvikvm]threadid=1: interp stack at 0x7f46aef33000
+[android_log_print][VERBOSE][dalvikvm]LinearAlloc: created region at 0x7f46ad64a000-0x7f46adb49fff
+[android_log_print][VERBOSE][dalvikvm]Opening archive '/data/core.jar' 0x7ffcfe188670
+[android_log_print][VERBOSE][dalvikvm]+++ numEntries=37 cdOffset=2151751
+[android_log_print][VERBOSE][dalvikvm]Couldn't open /data/core.odex: No such file or directory
+[android_log_print][VERBOSE][dalvikvm]Cache file for '/data/core.jar' 'classes.dex' is '/data/dalvik-cache/data@core.jar@classes.dex'
+[android_log_print][VERBOSE][dalvikvm]dvmDexCacheStatus: Checking cache for /data/core.jar (/data/dalvik-cache/data@core.jar@classes.dex)
+[android_log_print][VERBOSE][dalvikvm]DexOpt: locking cache file /data/dalvik-cache/data@core.jar@classes.dex (fd=4, boot=1)
+[android_log_print][VERBOSE][dalvikvm]DexOpt:  locked cache file
+[android_log_print][VERBOSE][dalvikvm]checking deps, expecting vfy=1 opt=1
+[android_log_print][DEBUG][dalvikvm]DexOpt: incorrect opt magic number (0xff ff ff ff)
+[android_log_print][DEBUG][dalvikvm]Stale deps in cache file; removing and retrying
+[android_log_print][VERBOSE][dalvikvm]DexOpt: locking cache file /data/dalvik-cache/data@core.jar@classes.dex (fd=4, boot=1)
+[android_log_print][VERBOSE][dalvikvm]DexOpt:  locked cache file
+[android_log_print][VERBOSE][dalvikvm]DexOpt: successfully initialized new cache file
+[android_log_print][DEBUG][dalvikvm]DexOpt: --- BEGIN 'core.jar' (bootstrap=1) ---
+[android_log_print][VERBOSE][dalvikvm]DexOpt: waiting for verify+opt, pid=2092
+[android_log_print][WARN][dalvikvm]ANDROID_ROOT not set, defaulting to /system
+[android_log_print][VERBOSE][dalvikvm]Args: fd=4 off=40 len=4911856 name='/data/core.jar' mod=0x3cde708c crc=0xfaf09ea5 flg=29 (argc=1)
+[android_log_print][VERBOSE][dalvikvm]  bootclasspath is ''
+[android_log_print][VERBOSE][dalvikvm-heap]Creating VM heap of size 2097152
+=================> create_contiguous_mspace_with_base
+mprotect Error: Cannot allocate memory
+=================> c80a8000, 1052672, 15724544
+[android_log_print][VERBOSE][dalvikvm]threadid=1: interp stack at 0x7f86c9350000
+[android_log_print][VERBOSE][dalvikvm]LinearAlloc: created region at 0x7f86c7a67000-0x7f86c7f66fff
+[android_log_print][VERBOSE][dalvikvm]Continuing optimization (/data/core.jar, isb=1, vfy=1, opt=1)
+[android_log_print][VERBOSE][dalvikvm]+++ swapping bytes
+[android_log_print][VERBOSE][dalvikvm]+++ swapping and verifying
+dexopt: DexSwapVerify.c:407: swapMap: Assertion `((((((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a))(-((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a))(~((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a)) 1 << ((sizeof(typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a)) * 8) - 1)))) - 1)) <= ((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a))0)) && (((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))(-((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))(~((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b)) 1 << ((sizeof(typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b)) * 8) - 1)))) - 1)) <= ((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))0))) || (((((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a))(-((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a))(~((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a)) 1 << ((sizeof(typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a)) * 8) - 1)))) - 1)) > ((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a))0))) && (((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))(-((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))(~((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b)) 1 << ((sizeof(typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b)) * 8) - 1)))) - 1)) > ((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))0)))) && (sizeof(typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a)) == sizeof(typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))))' failed.
+[android_log_print][WARN][dalvikvm]DexOpt: --- END 'core.jar' --- status=0x0086, process failed
+[android_log_print][ERROR][dalvikvm]Unable to extract+optimize DEX from '/data/core.jar'
+[android_log_print][VERBOSE][dalvikvm]Closing archive 0x7ffcfe188670
+[android_log_print][DEBUG][dalvikvm]Unable to process classpath element '/data/core.jar'
+[android_log_print][VERBOSE][dalvikvm]Opening archive '/data/ext.jar' 0x7ffcfe188670
+[android_log_print][VERBOSE][dalvikvm]+++ numEntries=3 cdOffset=234576
+[android_log_print][VERBOSE][dalvikvm]Couldn't open /data/ext.odex: No such file or directory
+[android_log_print][VERBOSE][dalvikvm]Cache file for '/data/ext.jar' 'classes.dex' is '/data/dalvik-cache/data@ext.jar@classes.dex'
+[android_log_print][VERBOSE][dalvikvm]dvmDexCacheStatus: Checking cache for /data/ext.jar (/data/dalvik-cache/data@ext.jar@classes.dex)
+[android_log_print][VERBOSE][dalvikvm]DexOpt: locking cache file /data/dalvik-cache/data@ext.jar@classes.dex (fd=4, boot=1)
+[android_log_print][VERBOSE][dalvikvm]DexOpt:  locked cache file
+[android_log_print][VERBOSE][dalvikvm]checking deps, expecting vfy=1 opt=1
+[android_log_print][DEBUG][dalvikvm]DexOpt: incorrect opt magic number (0xff ff ff ff)
+[android_log_print][DEBUG][dalvikvm]Stale deps in cache file; removing and retrying
+[android_log_print][VERBOSE][dalvikvm]DexOpt: locking cache file /data/dalvik-cache/data@ext.jar@classes.dex (fd=4, boot=1)
+[android_log_print][VERBOSE][dalvikvm]DexOpt:  locked cache file
+[android_log_print][VERBOSE][dalvikvm]DexOpt: successfully initialized new cache file
+[android_log_print][DEBUG][dalvikvm]DexOpt: --- BEGIN 'ext.jar' (bootstrap=1) ---
+[android_log_print][VERBOSE][dalvikvm]DexOpt: waiting for verify+opt, pid=2094
+[android_log_print][WARN][dalvikvm]ANDROID_ROOT not set, defaulting to /system
+[android_log_print][VERBOSE][dalvikvm]Args: fd=4 off=40 len=560024 name='/data/ext.jar' mod=0x3cde709b crc=0x40e5de20 flg=29 (argc=1)
+[android_log_print][VERBOSE][dalvikvm]  bootclasspath is ''
+[android_log_print][VERBOSE][dalvikvm-heap]Creating VM heap of size 2097152
+=================> create_contiguous_mspace_with_base
+mprotect Error: Cannot allocate memory
+=================> 43a5f000, 1052672, 15724544
+[android_log_print][VERBOSE][dalvikvm]threadid=1: interp stack at 0x7f2444d07000
+[android_log_print][VERBOSE][dalvikvm]LinearAlloc: created region at 0x7f244341e000-0x7f244391dfff
+[android_log_print][VERBOSE][dalvikvm]Continuing optimization (/data/ext.jar, isb=1, vfy=1, opt=1)
+[android_log_print][VERBOSE][dalvikvm]+++ swapping bytes
+[android_log_print][VERBOSE][dalvikvm]+++ swapping and verifying
+dexopt: DexSwapVerify.c:407: swapMap: Assertion `((((((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a))(-((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a))(~((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a)) 1 << ((sizeof(typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a)) * 8) - 1)))) - 1)) <= ((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a))0)) && (((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))(-((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))(~((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b)) 1 << ((sizeof(typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b)) * 8) - 1)))) - 1)) <= ((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))0))) || (((((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a))(-((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a))(~((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a)) 1 << ((sizeof(typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a)) * 8) - 1)))) - 1)) > ((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a))0))) && (((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))(-((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))(~((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b)) 1 << ((sizeof(typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b)) * 8) - 1)))) - 1)) > ((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))0)))) && (sizeof(typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a)) == sizeof(typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))))' failed.
+[android_log_print][WARN][dalvikvm]DexOpt: --- END 'ext.jar' --- status=0x0086, process failed
+[android_log_print][ERROR][dalvikvm]Unable to extract+optimize DEX from '/data/ext.jar'
+[android_log_print][VERBOSE][dalvikvm]Closing archive 0x7ffcfe188670
+[android_log_print][DEBUG][dalvikvm]Unable to process classpath element '/data/ext.jar'
+[android_log_print][VERBOSE][dalvikvm]Opening archive '/data/framework.jar' 0x7ffcfe188670
+[android_log_print][VERBOSE][dalvikvm]+++ numEntries=4 cdOffset=2711662
+[android_log_print][VERBOSE][dalvikvm]Couldn't open /data/framework.odex: No such file or directory
+[android_log_print][VERBOSE][dalvikvm]Cache file for '/data/framework.jar' 'classes.dex' is '/data/dalvik-cache/data@framework.jar@classes.dex'
+[android_log_print][VERBOSE][dalvikvm]dvmDexCacheStatus: Checking cache for /data/framework.jar (/data/dalvik-cache/data@framework.jar@classes.dex)
+[android_log_print][VERBOSE][dalvikvm]DexOpt: locking cache file /data/dalvik-cache/data@framework.jar@classes.dex (fd=4, boot=1)
+[android_log_print][VERBOSE][dalvikvm]DexOpt:  locked cache file
+[android_log_print][VERBOSE][dalvikvm]checking deps, expecting vfy=1 opt=1
+[android_log_print][DEBUG][dalvikvm]DexOpt: incorrect opt magic number (0xff ff ff ff)
+[android_log_print][DEBUG][dalvikvm]Stale deps in cache file; removing and retrying
+[android_log_print][VERBOSE][dalvikvm]DexOpt: locking cache file /data/dalvik-cache/data@framework.jar@classes.dex (fd=4, boot=1)
+[android_log_print][VERBOSE][dalvikvm]DexOpt:  locked cache file
+[android_log_print][VERBOSE][dalvikvm]DexOpt: successfully initialized new cache file
+[android_log_print][DEBUG][dalvikvm]DexOpt: --- BEGIN 'framework.jar' (bootstrap=1) ---
+[android_log_print][VERBOSE][dalvikvm]DexOpt: waiting for verify+opt, pid=2113
+[android_log_print][WARN][dalvikvm]ANDROID_ROOT not set, defaulting to /system
+[android_log_print][VERBOSE][dalvikvm]Args: fd=4 off=40 len=6371256 name='/data/framework.jar' mod=0x3cde70b8 crc=0x585b86ff flg=29 (argc=1)
+[android_log_print][VERBOSE][dalvikvm]  bootclasspath is ''
+[android_log_print][VERBOSE][dalvikvm-heap]Creating VM heap of size 2097152
+=================> create_contiguous_mspace_with_base
+mprotect Error: Cannot allocate memory
+=================> e26e3000, 1052672, 15724544
+[android_log_print][VERBOSE][dalvikvm]threadid=1: interp stack at 0x7fdde398b000
+[android_log_print][VERBOSE][dalvikvm]LinearAlloc: created region at 0x7fdde20a2000-0x7fdde25a1fff
+[android_log_print][VERBOSE][dalvikvm]Continuing optimization (/data/framework.jar, isb=1, vfy=1, opt=1)
+[android_log_print][VERBOSE][dalvikvm]+++ swapping bytes
+[android_log_print][VERBOSE][dalvikvm]+++ swapping and verifying
+dexopt: DexSwapVerify.c:407: swapMap: Assertion `((((((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a))(-((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a))(~((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a)) 1 << ((sizeof(typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a)) * 8) - 1)))) - 1)) <= ((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a))0)) && (((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))(-((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))(~((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b)) 1 << ((sizeof(typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b)) * 8) - 1)))) - 1)) <= ((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))0))) || (((((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a))(-((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a))(~((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a)) 1 << ((sizeof(typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a)) * 8) - 1)))) - 1)) > ((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a))0))) && (((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))(-((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))(~((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b)) 1 << ((sizeof(typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b)) * 8) - 1)))) - 1)) > ((typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))0)))) && (sizeof(typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__a)) == sizeof(typeof(OPAQUE_SAFE_IOP_PREFIX_VARIABLE__b))))' failed.
+[android_log_print][WARN][dalvikvm]DexOpt: --- END 'framework.jar' --- status=0x0086, process failed
+[android_log_print][ERROR][dalvikvm]Unable to extract+optimize DEX from '/data/framework.jar'
+[android_log_print][VERBOSE][dalvikvm]Closing archive 0x7ffcfe188670
+[android_log_print][DEBUG][dalvikvm]Unable to process classpath element '/data/framework.jar'
+[android_log_print][ERROR][dalvikvm]ERROR: no valid entries found in bootclasspath '/data/core.jar:/data/ext.jar:/data/framework.jar'
+[android_log_print][VERBOSE][dalvikvm]VM shutting down
+make: *** [Makefile:42: test] Segmentation fault (core dumped)
+wmt@wmt-VirtualBox:~/dalvik_linux_port/dalvik/dalvikvm$ 
+

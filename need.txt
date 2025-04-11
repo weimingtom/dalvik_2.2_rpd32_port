@@ -1,0 +1,118 @@
+wmt@wmt-VirtualBox:~/dalvik_linux_port/dalvik/dalvikvm$ make test
+./dalvikvm -Xbootclasspath:./foo.jar -classpath foo.jar Foo
+[android_log_print][VERBOSE][dalvikvm]VM init args (3):
+[android_log_print][VERBOSE][dalvikvm]  0: '-Xbootclasspath:./foo.jar'
+[android_log_print][VERBOSE][dalvikvm]  1: '-classpath'
+[android_log_print][VERBOSE][dalvikvm]  2: 'foo.jar'
+[android_log_print][VERBOSE][dalvikvm]VM options (3):
+[android_log_print][VERBOSE][dalvikvm]  0: '-Xbootclasspath:./foo.jar'
+[android_log_print][VERBOSE][dalvikvm]  1: '-classpath'
+[android_log_print][VERBOSE][dalvikvm]  2: 'foo.jar'
+[android_log_print][VERBOSE][dalvikvm]Using kernel scheduler policies[android_log_print][VERBOSE][dalvikvm]Using executionMode 2
+[android_log_print][VERBOSE][dalvikvm-heap]Creating VM heap of size 2097152
+=================> create_contiguous_mspace_with_base
+mprotect Error: Cannot allocate memory
+=================> 9805000, 1052672, 15724544
+[android_log_print][VERBOSE][dalvikvm]threadid=1: interp stack at 0x7fbf0aaad000
+[android_log_print][VERBOSE][dalvikvm]LinearAlloc: created region at 0x7fbf091c4000-0x7fbf096c3fff
+[android_log_print][VERBOSE][dalvikvm]Opening archive './foo.jar' 0x7ffdff079f50
+[android_log_print][VERBOSE][dalvikvm]+++ numEntries=2 cdOffset=500
+[android_log_print][VERBOSE][dalvikvm]Couldn't open ./foo.odex: No such file or directory
+[android_log_print][VERBOSE][dalvikvm]Cache file for './foo.jar' 'classes.dex' is '/data/dalvik-cache/home@wmt@dalvik_linux_port@dalvik@dalvikvm@.@foo.jar@classes.dex'
+[android_log_print][VERBOSE][dalvikvm]dvmDexCacheStatus: Checking cache for ./foo.jar (/data/dalvik-cache/home@wmt@dalvik_linux_port@dalvik@dalvikvm@.@foo.jar@classes.dex)
+[android_log_print][ERROR][dalvikvm]Can't open dex cache '/data/dalvik-cache/home@wmt@dalvik_linux_port@dalvik@dalvikvm@.@foo.jar@classes.dex': No such file or directory
+[android_log_print][INFO][dalvikvm]Unable to open or create cache for ./foo.jar (/data/dalvik-cache/home@wmt@dalvik_linux_port@dalvik@dalvikvm@.@foo.jar@classes.dex)
+[android_log_print][VERBOSE][dalvikvm]Closing archive 0x7ffdff079f50
+[android_log_print][DEBUG][dalvikvm]Unable to process classpath element './foo.jar'
+[android_log_print][ERROR][dalvikvm]ERROR: no valid entries found in bootclasspath './foo.jar'
+[android_log_print][VERBOSE][dalvikvm]VM shutting down
+make: *** [Makefile:41: test] Segmentation fault (core dumped)
+
+
+
+
+
+wmt@wmt-VirtualBox:~/dalvik_linux_port/dalvik/dalvikvm$ make test
+./dalvikvm -Xbootclasspath:./foo.jar -classpath foo.jar Foo
+[android_log_print][VERBOSE][dalvikvm]VM init args (3):
+[android_log_print][VERBOSE][dalvikvm]  0: '-Xbootclasspath:./foo.jar'
+[android_log_print][VERBOSE][dalvikvm]  1: '-classpath'
+[android_log_print][VERBOSE][dalvikvm]  2: 'foo.jar'
+[android_log_print][VERBOSE][dalvikvm]VM options (3):
+[android_log_print][VERBOSE][dalvikvm]  0: '-Xbootclasspath:./foo.jar'
+[android_log_print][VERBOSE][dalvikvm]  1: '-classpath'
+[android_log_print][VERBOSE][dalvikvm]  2: 'foo.jar'
+[android_log_print][VERBOSE][dalvikvm]Using kernel scheduler policies[android_log_print][VERBOSE][dalvikvm]Using executionMode 2
+[android_log_print][VERBOSE][dalvikvm-heap]Creating VM heap of size 2097152
+=================> create_contiguous_mspace_with_base
+mprotect Error: Cannot allocate memory
+=================> 7378e000, 1052672, 15724544
+[android_log_print][VERBOSE][dalvikvm]threadid=1: interp stack at 0x7f5f74a36000
+[android_log_print][VERBOSE][dalvikvm]LinearAlloc: created region at 0x7f5f7314d000-0x7f5f7364cfff
+[android_log_print][VERBOSE][dalvikvm]Opening archive './foo.jar' 0x7ffd6a8394c0
+[android_log_print][VERBOSE][dalvikvm]+++ numEntries=2 cdOffset=500
+[android_log_print][VERBOSE][dalvikvm]Couldn't open ./foo.odex: No such file or directory
+[android_log_print][VERBOSE][dalvikvm]Cache file for './foo.jar' 'classes.dex' is '/data/dalvik-cache/home@wmt@dalvik_linux_port@dalvik@dalvikvm@.@foo.jar@classes.dex'
+[android_log_print][VERBOSE][dalvikvm]dvmDexCacheStatus: Checking cache for ./foo.jar (/data/dalvik-cache/home@wmt@dalvik_linux_port@dalvik@dalvikvm@.@foo.jar@classes.dex)
+[android_log_print][ERROR][dalvikvm]Can't open dex cache '/data/dalvik-cache/home@wmt@dalvik_linux_port@dalvik@dalvikvm@.@foo.jar@classes.dex': No such file or directory
+[android_log_print][INFO][dalvikvm]Unable to open or create cache for ./foo.jar (/data/dalvik-cache/home@wmt@dalvik_linux_port@dalvik@dalvikvm@.@foo.jar@classes.dex)
+[android_log_print][VERBOSE][dalvikvm]Closing archive 0x7ffd6a8394c0
+[android_log_print][DEBUG][dalvikvm]Unable to process classpath element './foo.jar'
+[android_log_print][ERROR][dalvikvm]ERROR: no valid entries found in bootclasspath './foo.jar'
+[android_log_print][VERBOSE][dalvikvm]VM shutting down
+make: *** [Makefile:41: test] Segmentation fault (core dumped)
+wmt@wmt-VirtualBox:~/dalvik_linux_port/dalvik/dalvikvm$ 
+
+
+
+
+wmt@wmt-VirtualBox:~/dalvik_linux_port/dalvik/dalvikvm$ make test
+#./dalvikvm -Xbootclasspath:./foo.jar -classpath foo.jar Foo
+./dalvikvm -Xbootclasspath:./framework/core.jar:./framework/ext.jar:./framework/framework.jar -classpath foo.jar Foo
+[android_log_print][VERBOSE][dalvikvm]VM init args (3):
+[android_log_print][VERBOSE][dalvikvm]  0: '-Xbootclasspath:./framework/core.jar:./framework/ext.jar:./framework/framework.jar'
+[android_log_print][VERBOSE][dalvikvm]  1: '-classpath'
+[android_log_print][VERBOSE][dalvikvm]  2: 'foo.jar'
+[android_log_print][VERBOSE][dalvikvm]VM options (3):
+[android_log_print][VERBOSE][dalvikvm]  0: '-Xbootclasspath:./framework/core.jar:./framework/ext.jar:./framework/framework.jar'
+[android_log_print][VERBOSE][dalvikvm]  1: '-classpath'
+[android_log_print][VERBOSE][dalvikvm]  2: 'foo.jar'
+[android_log_print][VERBOSE][dalvikvm]Using kernel scheduler policies[android_log_print][VERBOSE][dalvikvm]Using executionMode 2
+[android_log_print][VERBOSE][dalvikvm-heap]Creating VM heap of size 2097152
+=================> create_contiguous_mspace_with_base
+mprotect Error: Cannot allocate memory
+=================> d5e9f000, 1052672, 15724544
+[android_log_print][VERBOSE][dalvikvm]threadid=1: interp stack at 0x7f4ad7147000
+[android_log_print][VERBOSE][dalvikvm]LinearAlloc: created region at 0x7f4ad585e000-0x7f4ad5d5dfff
+[android_log_print][VERBOSE][dalvikvm]Opening archive './framework/core.jar' 0x7ffda718cbb0
+[android_log_print][VERBOSE][dalvikvm]+++ numEntries=21 cdOffset=1860962
+[android_log_print][VERBOSE][dalvikvm]Couldn't open ./framework/core.odex: No such file or directory
+[android_log_print][VERBOSE][dalvikvm]Cache file for './framework/core.jar' 'classes.dex' is '/data/dalvik-cache/home@wmt@dalvik_linux_port@dalvik@dalvikvm@.@framework@core.jar@classes.dex'
+[android_log_print][VERBOSE][dalvikvm]dvmDexCacheStatus: Checking cache for ./framework/core.jar (/data/dalvik-cache/home@wmt@dalvik_linux_port@dalvik@dalvikvm@.@framework@core.jar@classes.dex)
+[android_log_print][ERROR][dalvikvm]Can't open dex cache '/data/dalvik-cache/home@wmt@dalvik_linux_port@dalvik@dalvikvm@.@framework@core.jar@classes.dex': No such file or directory
+[android_log_print][INFO][dalvikvm]Unable to open or create cache for ./framework/core.jar (/data/dalvik-cache/home@wmt@dalvik_linux_port@dalvik@dalvikvm@.@framework@core.jar@classes.dex)
+[android_log_print][VERBOSE][dalvikvm]Closing archive 0x7ffda718cbb0
+[android_log_print][DEBUG][dalvikvm]Unable to process classpath element './framework/core.jar'
+[android_log_print][VERBOSE][dalvikvm]Opening archive './framework/ext.jar' 0x7ffda718cbb0
+[android_log_print][VERBOSE][dalvikvm]+++ numEntries=3 cdOffset=515080
+[android_log_print][VERBOSE][dalvikvm]Couldn't open ./framework/ext.odex: No such file or directory
+[android_log_print][VERBOSE][dalvikvm]Cache file for './framework/ext.jar' 'classes.dex' is '/data/dalvik-cache/home@wmt@dalvik_linux_port@dalvik@dalvikvm@.@framework@ext.jar@classes.dex'
+[android_log_print][VERBOSE][dalvikvm]dvmDexCacheStatus: Checking cache for ./framework/ext.jar (/data/dalvik-cache/home@wmt@dalvik_linux_port@dalvik@dalvikvm@.@framework@ext.jar@classes.dex)
+[android_log_print][ERROR][dalvikvm]Can't open dex cache '/data/dalvik-cache/home@wmt@dalvik_linux_port@dalvik@dalvikvm@.@framework@ext.jar@classes.dex': No such file or directory
+[android_log_print][INFO][dalvikvm]Unable to open or create cache for ./framework/ext.jar (/data/dalvik-cache/home@wmt@dalvik_linux_port@dalvik@dalvikvm@.@framework@ext.jar@classes.dex)
+[android_log_print][VERBOSE][dalvikvm]Closing archive 0x7ffda718cbb0
+[android_log_print][DEBUG][dalvikvm]Unable to process classpath element './framework/ext.jar'
+[android_log_print][VERBOSE][dalvikvm]Opening archive './framework/framework.jar' 0x7ffda718cbb0
+[android_log_print][VERBOSE][dalvikvm]+++ numEntries=4 cdOffset=2935697
+[android_log_print][VERBOSE][dalvikvm]Couldn't open ./framework/framework.odex: No such file or directory
+[android_log_print][VERBOSE][dalvikvm]Cache file for './framework/framework.jar' 'classes.dex' is '/data/dalvik-cache/home@wmt@dalvik_linux_port@dalvik@dalvikvm@.@framework@framework.jar@classes.dex'
+[android_log_print][VERBOSE][dalvikvm]dvmDexCacheStatus: Checking cache for ./framework/framework.jar (/data/dalvik-cache/home@wmt@dalvik_linux_port@dalvik@dalvikvm@.@framework@framework.jar@classes.dex)
+[android_log_print][ERROR][dalvikvm]Can't open dex cache '/data/dalvik-cache/home@wmt@dalvik_linux_port@dalvik@dalvikvm@.@framework@framework.jar@classes.dex': No such file or directory
+[android_log_print][INFO][dalvikvm]Unable to open or create cache for ./framework/framework.jar (/data/dalvik-cache/home@wmt@dalvik_linux_port@dalvik@dalvikvm@.@framework@framework.jar@classes.dex)
+[android_log_print][VERBOSE][dalvikvm]Closing archive 0x7ffda718cbb0
+[android_log_print][DEBUG][dalvikvm]Unable to process classpath element './framework/framework.jar'
+[android_log_print][ERROR][dalvikvm]ERROR: no valid entries found in bootclasspath './framework/core.jar:./framework/ext.jar:./framework/framework.jar'
+[android_log_print][VERBOSE][dalvikvm]VM shutting down
+make: *** [Makefile:42: test] Segmentation fault (core dumped)
+wmt@wmt-VirtualBox:~/dalvik_linux_port/dalvik/dalvikvm$ 
+

@@ -1,0 +1,65 @@
+2912+13809 * 4 = 348552 bytes
+[android_log_print][VERBOSE][dalvikvm]Class lookup: classes=3580 slots=8192 (43% occ) alloc=98312 total=1412 max=14
+[android_log_print][VERBOSE][dalvikvm]DexOpt: +++ trying to load 3580 classes
+[android_log_print][VERBOSE][dalvikvm]+++ dvmAddClassToHash 'Ljava/lang/Class;' (nil) (isnew=1) --> 0xb4ae4340
+[android_log_print][VERBOSE][dalvikvm]+++ dvmAddClassToHash 'Ljava/lang/Object;' (nil) (isnew=1) --> 0xb4ae43e8
+[android_log_print][VERBOSE][dalvikvm]+++ dvmAddClassToHash 'Ljava/io/Serializable;' (nil) (isnew=1) --> 0xb4ae4490
+[android_log_print][VERBOSE][dalvikvm]+++ dvmAddClassToHash 'Ljava/lang/reflect/AnnotatedElement;' (nil) (isnew=1) --> 0xb4ae4538
+[android_log_print][VERBOSE][dalvikvm]+++ dvmAddClassToHash 'Ljava/lang/reflect/GenericDeclaration;' (nil) (isnew=1) --> 0xb4ae45e0
+[android_log_print][VERBOSE][dalvikvm]+++ dvmAddClassToHash 'Ljava/lang/reflect/Type;' (nil) (isnew=1) --> 0xb4ae4688
+[android_log_print][VERBOSE][dalvikvm]--- LinearRealloc(272) old=276
+[android_log_print][VERBOSE][dalvikvm]+++ explicitly initializing Ljava/lang/Class;
+[android_log_print][VERBOSE][dalvikvm]+++ dvmAddClassToHash 'Ljava/lang/String;' (nil) (isnew=1) --> 0xb4ae4730
+[android_log_print][VERBOSE][dalvikvm]+++ dvmAddClassToHash 'Ljava/lang/Comparable;' (nil) (isnew=1) --> 0xb4ae47d8
+[android_log_print][VERBOSE][dalvikvm]+++ dvmAddClassToHash 'Ljava/lang/CharSequence;' (nil) (isnew=1) --> 0xb4ae4880
+[android_log_print][VERBOSE][dalvikvm]--- LinearRealloc(240) old=252
+[android_log_print][VERBOSE][dalvikvm]+++ dvmAddClassToHash 'Ljava/lang/Throwable;' (nil) (isnew=1) --> 0xb4ae4928
+[android_log_print][VERBOSE][dalvikvm]--- LinearRealloc(84) old=92
+[Switching to Thread 0xb5ae7300 (LWP 1337)]
+
+Thread 2.1 "dexopt" hit Breakpoint 1, dvmAbort () at Init.c:1673
+1673	    LOGE("VM aborting\n");
+(gdb) bt
+#0  dvmAbort () at Init.c:1673
+#1  0x004843da in dvmUpdateAtomicCache (key1=3031319360, key2=3031319528, 
+    value=1, pEntry=0x57ec40, firstVersion=2) at AtomicCache.c:152
+#2  0x0046e416 in dvmInstanceofNonTrivial (instance=0xb4ae4340, 
+    clazz=0xb4ae43e8) at oo/TypeCheck.c:245
+#3  0x004a24f2 in dvmInstanceof (instance=0xb4ae4340, clazz=0xb4ae43e8)
+    at ./oo/TypeCheck.h:43
+#4  0x004a3abe in verifyInvocationArgs (meth=0xb45a5050, insnRegs=0xbfffeb10, 
+    insnRegCount=1, pDecInsn=0xbfffe8f0, uninitMap=0x584940, 
+    methodType=METHOD_DIRECT, isRange=false, isSuper=false, 
+    pFailure=0xbfffe8ec) at analysis/CodeVerify.c:1156
+#5  0x004a9ba3 in verifyInstruction (meth=0xb45a5050, insnFlags=0x5ae508, 
+    regTable=0xbfffebb0, workRegs=0xbfffeb10, insnIdx=0, uninitMap=0x584940, 
+    pStartGuess=0xbfffeb20) at analysis/CodeVerify.c:4988
+#6  0x004a667b in doCodeVerification (meth=0xb45a5050, insnFlags=0x5ae508, 
+    regTable=0xbfffebb0, uninitMap=0x584940) at analysis/CodeVerify.c:3318
+#7  0x004a629c in dvmVerifyCodeFlow (meth=0xb45a5050, insnFlags=0x5ae508, 
+    uninitMap=0x584940) at analysis/CodeVerify.c:3122
+#8  0x0044a4ba in verifyMethod (meth=0xb45a5050, verifyFlags=0)
+    at analysis/DexVerify.c:253
+#9  0x0044a2c9 in dvmVerifyClass (clazz=0xb4ae4340, verifyFlags=0)
+    at analysis/DexVerify.c:138
+#10 0x0046ae84 in dvmInitClass (clazz=0xb4ae4340) at oo/Class.c:4313
+---Type <return> to continue, or q <return> to quit---
+#11 0x00466cf1 in findClassNoInit (descriptor=0x513e6f "Ljava/lang/Class;", 
+    loader=0x0, pDvmDex=0x5849d8) at oo/Class.c:1632
+#12 0x004665bd in dvmFindSystemClassNoInit (
+    descriptor=0x513e6f "Ljava/lang/Class;") at oo/Class.c:1354
+#13 0x00466504 in dvmFindSystemClass (descriptor=0x513e6f "Ljava/lang/Class;")
+    at oo/Class.c:1332
+#14 0x00447fc1 in loadAllClasses (pDvmDex=0x5849d8)
+    at analysis/DexOptimize.c:1370
+#15 0x00447de0 in rewriteDex (addr=0xb40f4028 "dex\n035", len=4911856, 
+    doVerify=true, doOpt=true, pHeaderFlags=0xbfffee08, 
+    ppClassLookup=0xbfffee0c) at analysis/DexOptimize.c:1276
+#16 0x00446b37 in dvmContinueOptimization (fd=4, dexOffset=40, 
+    dexLength=4911856, fileName=0xbffff1f2 "/data/core.jar", 
+    modWhen=1021210764, crc=4210073253, isBootstrap=true)
+    at analysis/DexOptimize.c:585
+#17 0x004140a0 in fromDex ()
+#18 0x004141a7 in main ()
+
+

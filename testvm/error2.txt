@@ -1,0 +1,129 @@
+#./dalvikvm -Xbootclasspath:./foo.jar -classpath foo.jar Foo
+sudo ./dalvikvm -Xbootclasspath:/data/core.jar:/data/ext.jar:/data/framework.jar -classpath /data/foo.jar Foo
+[sudo] password for wmt: 
+[android_log_print][VERBOSE][dalvikvm]VM init args (3):
+[android_log_print][VERBOSE][dalvikvm]  0: '-Xbootclasspath:/data/core.jar:/data/ext.jar:/data/framework.jar'
+[android_log_print][VERBOSE][dalvikvm]  1: '-classpath'
+[android_log_print][VERBOSE][dalvikvm]  2: '/data/foo.jar'
+[android_log_print][VERBOSE][dalvikvm]VM options (3):
+[android_log_print][VERBOSE][dalvikvm]  0: '-Xbootclasspath:/data/core.jar:/data/ext.jar:/data/framework.jar'
+[android_log_print][VERBOSE][dalvikvm]  1: '-classpath'
+[android_log_print][VERBOSE][dalvikvm]  2: '/data/foo.jar'
+[android_log_print][VERBOSE][dalvikvm]Using kernel scheduler policies[android_log_print][VERBOSE][dalvikvm]Using executionMode 2
+[android_log_print][VERBOSE][dalvikvm-heap]Creating VM heap of size 2097152
+=================> create_contiguous_mspace_with_base
+mprotect Error: Cannot allocate memory
+=================> 1b4e6000, 1052672, 15724544
+[android_log_print][VERBOSE][dalvikvm]threadid=1: interp stack at 0x7f421c78d000
+[android_log_print][VERBOSE][dalvikvm]LinearAlloc: created region at 0x7f421aea5000-0x7f421b3a4fff
+[android_log_print][VERBOSE][dalvikvm]Opening archive '/data/core.jar' 0x7ffc8df48760
+[android_log_print][VERBOSE][dalvikvm]+++ numEntries=37 cdOffset=2151751
+[android_log_print][VERBOSE][dalvikvm]Couldn't open /data/core.odex: No such file or directory
+[android_log_print][VERBOSE][dalvikvm]Cache file for '/data/core.jar' 'classes.dex' is '/data/dalvik-cache/data@core.jar@classes.dex'
+[android_log_print][VERBOSE][dalvikvm]dvmDexCacheStatus: Checking cache for /data/core.jar (/data/dalvik-cache/data@core.jar@classes.dex)
+[android_log_print][VERBOSE][dalvikvm]DexOpt: locking cache file /data/dalvik-cache/data@core.jar@classes.dex (fd=4, boot=1)
+[android_log_print][VERBOSE][dalvikvm]DexOpt:  locked cache file
+[android_log_print][VERBOSE][dalvikvm]checking deps, expecting vfy=1 opt=1
+[android_log_print][DEBUG][dalvikvm]DexOpt: incorrect opt magic number (0xff ff ff ff)
+[android_log_print][DEBUG][dalvikvm]Stale deps in cache file; removing and retrying
+[android_log_print][VERBOSE][dalvikvm]DexOpt: locking cache file /data/dalvik-cache/data@core.jar@classes.dex (fd=4, boot=1)
+[android_log_print][VERBOSE][dalvikvm]DexOpt:  locked cache file
+[android_log_print][VERBOSE][dalvikvm]DexOpt: successfully initialized new cache file
+[android_log_print][DEBUG][dalvikvm]DexOpt: --- BEGIN 'core.jar' (bootstrap=1) ---
+[android_log_print][VERBOSE][dalvikvm]DexOpt: waiting for verify+opt, pid=4251
+[android_log_print][WARN][dalvikvm]ANDROID_ROOT not set, defaulting to /system
+[android_log_print][VERBOSE][dalvikvm]Args: fd=4 off=40 len=4911856 name='/data/core.jar' mod=0x3cde708c crc=0xfaf09ea5 flg=29 (argc=1)
+[android_log_print][VERBOSE][dalvikvm]  bootclasspath is ''
+[android_log_print][VERBOSE][dalvikvm-heap]Creating VM heap of size 2097152
+=================> create_contiguous_mspace_with_base
+mprotect Error: Cannot allocate memory
+=================> 57edd000, 1052672, 15724544
+[android_log_print][VERBOSE][dalvikvm]threadid=1: interp stack at 0x7f5759184000
+[android_log_print][VERBOSE][dalvikvm]LinearAlloc: created region at 0x7f575789c000-0x7f5757d9bfff
+[android_log_print][VERBOSE][dalvikvm]Continuing optimization (/data/core.jar, isb=1, vfy=1, opt=1)
+[android_log_print][VERBOSE][dalvikvm]+++ swapping bytes
+[android_log_print][VERBOSE][dalvikvm]+++ swapping and verifying
+[android_log_print][ERROR][dalvikvm]Unable to allocate data map (size 0x19e30)
+[android_log_print][ERROR][dalvikvm]ERROR: Byte swap + verify failed
+[android_log_print][ERROR][dalvikvm]Optimization failed
+[android_log_print][VERBOSE][dalvikvm]DexOpt command complete (result=-1)
+[android_log_print][WARN][dalvikvm]DexOpt: --- END 'core.jar' --- status=0xff00, process failed
+[android_log_print][ERROR][dalvikvm]Unable to extract+optimize DEX from '/data/core.jar'
+[android_log_print][VERBOSE][dalvikvm]Closing archive 0x7ffc8df48760
+[android_log_print][DEBUG][dalvikvm]Unable to process classpath element '/data/core.jar'
+[android_log_print][VERBOSE][dalvikvm]Opening archive '/data/ext.jar' 0x7ffc8df48760
+[android_log_print][VERBOSE][dalvikvm]+++ numEntries=3 cdOffset=234576
+[android_log_print][VERBOSE][dalvikvm]Couldn't open /data/ext.odex: No such file or directory
+[android_log_print][VERBOSE][dalvikvm]Cache file for '/data/ext.jar' 'classes.dex' is '/data/dalvik-cache/data@ext.jar@classes.dex'
+[android_log_print][VERBOSE][dalvikvm]dvmDexCacheStatus: Checking cache for /data/ext.jar (/data/dalvik-cache/data@ext.jar@classes.dex)
+[android_log_print][VERBOSE][dalvikvm]DexOpt: locking cache file /data/dalvik-cache/data@ext.jar@classes.dex (fd=4, boot=1)
+[android_log_print][VERBOSE][dalvikvm]DexOpt:  locked cache file
+[android_log_print][VERBOSE][dalvikvm]checking deps, expecting vfy=1 opt=1
+[android_log_print][DEBUG][dalvikvm]DexOpt: incorrect opt magic number (0xff ff ff ff)
+[android_log_print][DEBUG][dalvikvm]Stale deps in cache file; removing and retrying
+[android_log_print][VERBOSE][dalvikvm]DexOpt: locking cache file /data/dalvik-cache/data@ext.jar@classes.dex (fd=4, boot=1)
+[android_log_print][VERBOSE][dalvikvm]DexOpt:  locked cache file
+[android_log_print][VERBOSE][dalvikvm]DexOpt: successfully initialized new cache file
+[android_log_print][DEBUG][dalvikvm]DexOpt: --- BEGIN 'ext.jar' (bootstrap=1) ---
+[android_log_print][VERBOSE][dalvikvm]DexOpt: waiting for verify+opt, pid=4254
+[android_log_print][WARN][dalvikvm]ANDROID_ROOT not set, defaulting to /system
+[android_log_print][VERBOSE][dalvikvm]Args: fd=4 off=40 len=560024 name='/data/ext.jar' mod=0x3cde709b crc=0x40e5de20 flg=29 (argc=1)
+[android_log_print][VERBOSE][dalvikvm]  bootclasspath is ''
+[android_log_print][VERBOSE][dalvikvm-heap]Creating VM heap of size 2097152
+=================> create_contiguous_mspace_with_base
+mprotect Error: Cannot allocate memory
+=================> c59ec000, 1052672, 15724544
+[android_log_print][VERBOSE][dalvikvm]threadid=1: interp stack at 0x7f97c6c93000
+[android_log_print][VERBOSE][dalvikvm]LinearAlloc: created region at 0x7f97c53ab000-0x7f97c58aafff
+[android_log_print][VERBOSE][dalvikvm]Continuing optimization (/data/ext.jar, isb=1, vfy=1, opt=1)
+[android_log_print][VERBOSE][dalvikvm]+++ swapping bytes
+[android_log_print][VERBOSE][dalvikvm]+++ swapping and verifying
+[android_log_print][ERROR][dalvikvm]Unable to allocate data map (size 0x3751)
+[android_log_print][ERROR][dalvikvm]ERROR: Byte swap + verify failed
+[android_log_print][ERROR][dalvikvm]Optimization failed
+[android_log_print][VERBOSE][dalvikvm]DexOpt command complete (result=-1)
+[android_log_print][WARN][dalvikvm]DexOpt: --- END 'ext.jar' --- status=0xff00, process failed
+[android_log_print][ERROR][dalvikvm]Unable to extract+optimize DEX from '/data/ext.jar'
+[android_log_print][VERBOSE][dalvikvm]Closing archive 0x7ffc8df48760
+[android_log_print][DEBUG][dalvikvm]Unable to process classpath element '/data/ext.jar'
+[android_log_print][VERBOSE][dalvikvm]Opening archive '/data/framework.jar' 0x7ffc8df48760
+[android_log_print][VERBOSE][dalvikvm]+++ numEntries=4 cdOffset=2711662
+[android_log_print][VERBOSE][dalvikvm]Couldn't open /data/framework.odex: No such file or directory
+[android_log_print][VERBOSE][dalvikvm]Cache file for '/data/framework.jar' 'classes.dex' is '/data/dalvik-cache/data@framework.jar@classes.dex'
+[android_log_print][VERBOSE][dalvikvm]dvmDexCacheStatus: Checking cache for /data/framework.jar (/data/dalvik-cache/data@framework.jar@classes.dex)
+[android_log_print][VERBOSE][dalvikvm]DexOpt: locking cache file /data/dalvik-cache/data@framework.jar@classes.dex (fd=4, boot=1)
+[android_log_print][VERBOSE][dalvikvm]DexOpt:  locked cache file
+[android_log_print][VERBOSE][dalvikvm]checking deps, expecting vfy=1 opt=1
+[android_log_print][DEBUG][dalvikvm]DexOpt: incorrect opt magic number (0xff ff ff ff)
+[android_log_print][DEBUG][dalvikvm]Stale deps in cache file; removing and retrying
+[android_log_print][VERBOSE][dalvikvm]DexOpt: locking cache file /data/dalvik-cache/data@framework.jar@classes.dex (fd=4, boot=1)
+[android_log_print][VERBOSE][dalvikvm]DexOpt:  locked cache file
+[android_log_print][VERBOSE][dalvikvm]DexOpt: successfully initialized new cache file
+[android_log_print][DEBUG][dalvikvm]DexOpt: --- BEGIN 'framework.jar' (bootstrap=1) ---
+[android_log_print][VERBOSE][dalvikvm]DexOpt: waiting for verify+opt, pid=4259
+[android_log_print][WARN][dalvikvm]ANDROID_ROOT not set, defaulting to /system
+[android_log_print][VERBOSE][dalvikvm]Args: fd=4 off=40 len=6371256 name='/data/framework.jar' mod=0x3cde70b8 crc=0x585b86ff flg=29 (argc=1)
+[android_log_print][VERBOSE][dalvikvm]  bootclasspath is ''
+[android_log_print][VERBOSE][dalvikvm-heap]Creating VM heap of size 2097152
+=================> create_contiguous_mspace_with_base
+mprotect Error: Cannot allocate memory
+=================> f07d8000, 1052672, 15724544
+[android_log_print][VERBOSE][dalvikvm]threadid=1: interp stack at 0x7f34f1a7f000
+[android_log_print][VERBOSE][dalvikvm]LinearAlloc: created region at 0x7f34f0197000-0x7f34f0696fff
+[android_log_print][VERBOSE][dalvikvm]Continuing optimization (/data/framework.jar, isb=1, vfy=1, opt=1)
+[android_log_print][VERBOSE][dalvikvm]+++ swapping bytes
+[android_log_print][VERBOSE][dalvikvm]+++ swapping and verifying
+[android_log_print][ERROR][dalvikvm]Unable to allocate data map (size 0x224d5)
+[android_log_print][ERROR][dalvikvm]ERROR: Byte swap + verify failed
+[android_log_print][ERROR][dalvikvm]Optimization failed
+[android_log_print][VERBOSE][dalvikvm]DexOpt command complete (result=-1)
+[android_log_print][WARN][dalvikvm]DexOpt: --- END 'framework.jar' --- status=0xff00, process failed
+[android_log_print][ERROR][dalvikvm]Unable to extract+optimize DEX from '/data/framework.jar'
+[android_log_print][VERBOSE][dalvikvm]Closing archive 0x7ffc8df48760
+[android_log_print][DEBUG][dalvikvm]Unable to process classpath element '/data/framework.jar'
+[android_log_print][ERROR][dalvikvm]ERROR: no valid entries found in bootclasspath '/data/core.jar:/data/ext.jar:/data/framework.jar'
+[android_log_print][VERBOSE][dalvikvm]VM shutting down
+make: *** [Makefile:42: test] Segmentation fault
+wmt@ubuntu:~/dalvik_linux_port/dalvik/dalvikvm$ 
+
+
